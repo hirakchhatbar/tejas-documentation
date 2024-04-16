@@ -1,0 +1,270 @@
+.container {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 140px);
+    padding: 20px 20px !important;
+}
+
+.login-container {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 70px);
+    padding: 20px 20px !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-heading {
+    color: var(--text-heading-color) !important;
+    font-weight: bold !important;
+}
+
+.text-body {
+    color: var(--text-body-color) !important;
+    font-weight: normal !important;
+}
+
+.text-muted {
+    color: var(--text-muted-color) !important;
+    font-weight: lighter !important;
+}
+
+.border-table {
+    border-top: solid 1px var(--border-table) !important;
+    border-bottom: solid 1px var(--border-table) !important;
+    padding-right: 1rem !important;
+}
+
+.border-muted {
+    border: solid 1px var(--border-table) !important;
+}
+
+.border {
+    border: solid 1px var(--border) !important;
+}
+
+.border-secondary {
+    border: solid 1px var(--secondary) !important;
+}
+
+.button-primary {
+    background: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+}
+
+.button-secondary {
+    background: var(--secondary) !important;
+    color: var(--secondary-foreground) !important;
+}
+
+.button-outline {
+    background: var(--card) !important;
+    color: var(--text-heading-color) !important;
+    border-color: var(--border) !important;
+    border-width: 1px !important;
+}
+
+.button-warning {
+    background: var(--error) !important;
+    color: var(--primary-foreground) !important;
+    border-color: var(--border) !important;
+    border-width: 1px !important;
+}
+
+.bg-body {
+    background: var(--background) !important;
+}
+
+.bg-card {
+    background: var(--card) !important;
+}
+
+.bg-popover {
+    background: var(--popover) !important;
+}
+
+.badge-success {
+    background: var(--include-badge-background) !important;
+    color: var(--include-badge-foreground) !important;
+    font-weight: 600 !important;
+    border: solid 1px var(--success) !important;
+}
+
+.badge-error {
+    background: var(--exclude-badge-background) !important;
+    color: var(--exclude-badge-foreground) !important;
+    font-weight: 600 !important;
+    border: solid 1px var(--error) !important;
+}
+
+.badge-primary {
+    background: var(--primary) !important;
+    color: var(--primary-foreground) !important;
+}
+
+.color-error {
+    color: var(--error) !important;
+}
+
+.color-success {
+    color: var(--success) !important;
+}
+
+.color-secondary {
+    color: var(--secondary) !important;
+}
+
+.color-primary {
+    color: var(--primary) !important;
+}
+
+.color-white {
+    color: var(--white) !important;
+}
+
+/* Common toast styles */
+.toast {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Success Toast */
+.toast-success {
+    @extend .toast;
+    background-color: #0cce6b;
+}
+
+.toast-success::before {
+    content: "\2714";
+    margin-right: 10px;
+}
+
+/* Warning Toast */
+.toast-warning {
+    @extend .toast;
+    background-color: #ffa500;
+}
+
+.toast-warning::before {
+    content: "\26A0";
+    margin-right: 10px;
+}
+
+/* Error Toast */
+.toast-error {
+    @extend .toast;
+    background-color: var(--error);
+}
+
+.toast-error::before {
+    content: "\274C";
+    margin-right: 10px;
+    background-color: #fff;
+    padding: 3px;
+    border-radius: 50%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-popover-foreground {
+    color: var(--popover-foreground) !important;
+}
+
+.error-message {
+    color: var(--error);
+    font-size: 13px;
+}
+
+.active-link {
+    background-color: var(--secondary) !important;
+    color: var(--secondary-foreground) !important;
+}
+
+.badge-primary {
+    background: var(--secondary) !important;
+    color: var(--secondary-foreground) !important;
+}
+
+.skeleton {
+    background: var(--skeleton) !important;
+}
+
+.scroll-bar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.border-error {
+    border: dashed 1px var(--error) !important;
+}
+
+.border-success {
+    border: solid 1px var(--success) !important;
+}
+
+/* Customizes the scrollbar for webkit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 6px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background); /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--secondary); /* Color of the scroll thumb */
+    border-radius: 3px; /* Rounded corners of the scroll thumb */
+}
+
+.sidebar-editable-input {
+    padding: 5px !important;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden; /* Prevent content from overflowing */
+    width: 100%;
+}
+
+.command-input-border {
+    border-bottom: solid 1px var(--border) !important;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: var(--text-muted-color) !important;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: var(--text-muted-color) !important;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: var(--text-muted-color) !important;
+    opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--text-muted-color) !important;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--text-muted-color) !important;
+}
+
+::placeholder { /* Most modern browsers support this now. */
+    color: var(--text-muted-color) !important;
+}
