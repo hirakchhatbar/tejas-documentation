@@ -16,21 +16,6 @@
     justify-content: center;
 }
 
-.text-heading {
-    color: var(--text-heading-color) !important;
-    font-weight: bold !important;
-}
-
-.text-body {
-    color: var(--text-body-color) !important;
-    font-weight: normal !important;
-}
-
-.text-muted {
-    color: var(--text-muted-color) !important;
-    font-weight: lighter !important;
-}
-
 .border-table {
     border-top: solid 1px var(--border-table) !important;
     border-bottom: solid 1px var(--border-table) !important;
@@ -61,7 +46,7 @@
 
 .button-outline {
     background: var(--card) !important;
-    color: var(--text-heading-color) !important;
+    color: var(--text-heading) !important;
     border-color: var(--border) !important;
     border-width: 1px !important;
 }
@@ -248,23 +233,23 @@
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
     opacity:  1;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
     opacity:  1;
 }
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
 }
 ::-ms-input-placeholder { /* Microsoft Edge */
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
 }
 
 ::placeholder { /* Most modern browsers support this now. */
-    color: var(--text-muted-color) !important;
+    color: var(--text-muted) !important;
 }

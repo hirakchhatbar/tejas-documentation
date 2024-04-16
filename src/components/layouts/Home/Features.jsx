@@ -19,11 +19,11 @@ const Features = () => {
             key={`feature-${index}`}
           >
             {feature.Icon && (
-              <feature.Icon className={'w-20 h-12 color-primary'} />
+              <feature.Icon className={'w-20 h-12 text-heading'} />
             )}
             <div className={'flex flex-col gap-2'}>
-              <p className={'text-lg text-heading'}>{feature.title}</p>
-              <p className={'text-sm text-body'}>{feature.description}</p>
+              <h3 className={'text-lg text-heading'}>{feature.title}</h3>
+              <p className={'text-base text-body'}>{feature.description}</p>
             </div>
           </Card>
         )

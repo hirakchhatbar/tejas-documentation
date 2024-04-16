@@ -21,13 +21,18 @@ const NavbarMenu = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href={"/documentation"} className={navigationMenuTriggerStyle()}>
-            Docs
+            Getting Started
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href={"/"} className={navigationMenuTriggerStyle()}>
             GitHub
             <ExternalLinkIcon className={'w-4 h-4 ml-2'} />
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink href={"/faq"} className={navigationMenuTriggerStyle()}>
+            FAQ
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

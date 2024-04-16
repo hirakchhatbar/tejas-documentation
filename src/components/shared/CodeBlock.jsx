@@ -16,7 +16,7 @@ const CodeBlock = ({
               return (
                 <div {...getLineProps({ line, key: i })}>
                   <div className={'flex flex-row gap-3'}>
-                    <p className={'!text-gray-600'}>{i + 1}.</p>
+                    <p className={'!text-gray-600'}>{i + 1}</p>
                     <div>
                       {line.map((token, key) => {
                         return <span {...getTokenProps({ token, key })} />

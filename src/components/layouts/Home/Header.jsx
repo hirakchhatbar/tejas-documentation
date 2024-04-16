@@ -9,7 +9,7 @@ const Header = () => {
       className={'flex flex-col h-[calc(100vh-102px)] justify-center gap-10'}
     >
       <div className={'flex flex-col self-center gap-3'}>
-        <h1 className={'text-4xl'}>
+        <h1 className={'text-4xl text-heading'}>
           A Node Framework For Powerful Backend Services
         </h1>
         <FadingText
