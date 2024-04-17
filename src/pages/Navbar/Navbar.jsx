@@ -9,7 +9,7 @@ const NavigationLayout = () => {
   return (
     <div className="navbar-container flex flex-col">
       <div
-        className="flex flex-row h-[70px] justify-between items-center py-5">
+        className="flex flex-row h-[70px] justify-between items-center px-5">
         <NavbarLogo />
         <NavbarMenu />
         <NavbarOptions />

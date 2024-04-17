@@ -1,12 +1,20 @@
-const middlewareSupport = `const tejas = new Tejas();
+const middlewareSupport = `// Supports express middlewares and custom te.js middlewares
+const expressMiddleware = require('./express-middleware');
+const myMiddleware = () => (ammo, next) => {
+  // Do something with ammo
+  next();
+}
 
-// To add global middlewares that will be applied to all endpoints, use tejas.midair()
-tejas.midair(cors());
-tejas.takeoff();
+// Add middleware globally for all endpoints
+tejas.midair(myMiddleware, expressMiddleware);
 
-// To apply middleware to all endpoints in a target, use target.midair()
-const target = new Target("/user");
-target.midair(myMiddleware());
-`;
+// Add middleware to all endpoints of a target
+target.midair(myMiddleware, expressMiddleware);
+
+// Add middleware to specific endpoints
+target.register('/hello', myMiddleware, expressMiddleware, (ammo) => {
+  // Do your stuff
+  ammo.fire('Hello, World!');
+});`;
 
 export default middlewareSupport;

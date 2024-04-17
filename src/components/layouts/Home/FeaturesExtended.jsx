@@ -1,3 +1,4 @@
+import SectionWrapper from '@/components/layouts/Home/SectionWrapper.jsx'
 import CodeBlock from '@/components/shared/CodeBlock.jsx'
 import { Card } from '@/components/ui/card.jsx'
 import {
@@ -14,7 +15,7 @@ import { themes } from 'prism-react-renderer'
 const ItemImage = ({ image }) => {
   return (
     <img
-      className={'rounded-md'}
+      className={'rounded-none rounded-t-md'}
       src={image}
       alt="Robust error handling"
     />
@@ -28,7 +29,7 @@ const ItemCodeBlock = ({ code }) => {
         language={'javascript'}
         theme={themes.dracula}
         code={code}
-        className={'rounded-md overflow-hidden'}
+        className={'rounded-none rounded-t-md overflow-hidden'}
       />
     </div>
   )
@@ -36,8 +37,8 @@ const ItemCodeBlock = ({ code }) => {
 
 const FeaturesExtended = () => {
   return (
-    <div className={'w-full flex flex-col gap-10 items-center px-16'}>
-      <h1>Why te.js?</h1>
+    <SectionWrapper className={'items-center justify-center'}>
+      <h1>{"Don't believe us? Take a look yourself"}</h1>
       <Carousel
         plugins={[
           Autoplay({
@@ -45,16 +46,16 @@ const FeaturesExtended = () => {
             stopOnInteraction: true
           })
 
-        ]} className="w-full">
-        <CarouselContent>
+        ]} className="w-[60%] h-full">
+        <CarouselContent className={"h-full"}>
           {data.map((item, index) => (
               <CarouselItem key={`extended-feature-${index}`}>
-                <div className={'grid grid-cols-2 gap-3'}>
+                <div className={'flex flex-col'}>
                   {item.image && <ItemImage image={item.image} />}
                   {item.code && <ItemCodeBlock code={item.code} />}
 
                   <Card
-                    className={'flex flex-col gap-5 text-center justify-center p-16 rounded-md'}>
+                    className={'flex flex-col gap-5 text-center justify-center p-16 rounded-none rounded-b-md !border-t-0'}>
                     <h1>{item.title}</h1>
                     <p>{item.description}</p>
                   </Card>
@@ -68,7 +69,7 @@ const FeaturesExtended = () => {
       </Carousel>
 
 
-    </div>
+    </SectionWrapper>
   )
 }
 

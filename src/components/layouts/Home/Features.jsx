@@ -1,3 +1,4 @@
+import SectionWrapper from '@/components/layouts/Home/SectionWrapper.jsx'
 import { Card } from '@/components/ui/card.jsx'
 import featuresData from '@/data/web-content/home/features.js'
 import { cn } from '@/lib/utils.js'
@@ -8,8 +9,8 @@ const Features = () => {
   const layoutHorizontal = 'flex flex-row gap-4'
 
   return (
-    <div className={'w-full flex flex-col gap-10 items-center px-16'}>
-      <h1>Features</h1>
+    <SectionWrapper className={"items-center"}>
+      <h1>Why te.js should be your choice of framework?</h1>
       <div className={'w-full grid grid-cols-3 gap-3'}>
         {featuresData.map((feature, index) => {
           return (
@@ -31,7 +32,7 @@ const Features = () => {
           )
         })}
       </div>
-    </div>
+    </SectionWrapper>
   )
 }
 

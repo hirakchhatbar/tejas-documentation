@@ -1,3 +1,4 @@
+import SectionWrapper from '@/components/layouts/Home/SectionWrapper.jsx'
 import CodeBlock from '@/components/shared/CodeBlock.jsx'
 import FadingText from '@/components/shared/FadingText.jsx'
 import { Button } from '@/components/ui/button.jsx'
@@ -7,10 +8,11 @@ import { themes } from 'prism-react-renderer'
 
 const Header = () => {
   return (
-    <div
-      className={'flex flex-col h-[calc(60vh)] justify-center gap-10'}
-    >
-      <div className={'flex flex-col self-center gap-3'}>
+    <SectionWrapper>
+      <div className={'flex flex-col items-center'}>
+        <img width={'25%'} src={'tejas-logo.svg'} />
+      </div>
+      <div className={'flex flex-col gap-3 text-center'}>
         <h1>
           A Node Framework For Powerful Backend Services
         </h1>
@@ -39,7 +41,7 @@ const Header = () => {
         Get Started
         <ExternalLinkIcon className={'w-4 h-4 text-body ml-2'} />
       </Button>
-    </div>
+    </SectionWrapper>
   )
 }
 

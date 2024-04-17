@@ -22,7 +22,6 @@ function App() {
           className={'flex w-full place-content-center items-center p-8'}>
           <Routes>
             {useRoutes}
-            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
         <Footer />

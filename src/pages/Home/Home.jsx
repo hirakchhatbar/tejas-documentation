@@ -5,7 +5,7 @@ import Header from '@/components/layouts/Home/Header.jsx'
 
 const Home = () => {
   return (
-    <div className={'flex flex-col max-w-[1440px] content-center items-center gap-20'}>
+    <div className={'flex flex-col max-w-[1440px] content-center items-center'}>
       <Header />
       <Features />
       <FeaturesExtended />

@@ -1,6 +1,5 @@
 'use client'
 
-import * as React from 'react'
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -15,24 +14,24 @@ const NavbarMenu = () => {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink href={"/home"} className={navigationMenuTriggerStyle()}>
-            Home
+          <NavigationMenuLink href={"/"} className={navigationMenuTriggerStyle()}>
+            <p className={"!text-heading"}>Home</p>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href={"/documentation"} className={navigationMenuTriggerStyle()}>
-            Getting Started
+          <NavigationMenuLink href={"/docs"} className={navigationMenuTriggerStyle()}>
+            <p className={"!text-heading"}>Docs</p>
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href={"/"} className={navigationMenuTriggerStyle()}>
-            GitHub
-            <ExternalLinkIcon className={'w-4 h-4 ml-2'} />
+            <p className={"!text-heading"}>GitHub</p>
+            <ExternalLinkIcon className={'!text-body w-4 h-4 ml-2'} />
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink href={"/faq"} className={navigationMenuTriggerStyle()}>
-            FAQ
+            <p className={"!text-heading"}>FAQ</p>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

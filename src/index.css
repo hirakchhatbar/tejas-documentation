@@ -182,7 +182,8 @@
   h5,
   h6,
   a {
-    font-weight: bold !important;
+    color: var(--active-link) !important;
+    font-weight: normal !important;
   }
 
   p {
