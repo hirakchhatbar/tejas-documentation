@@ -2,7 +2,7 @@ import Home from '@/pages/Home/Home.jsx'
 
 const routes = [
   {
-    path: '/home',
+    path: '/',
     component: Home
   }
 ]
