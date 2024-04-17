@@ -4,7 +4,7 @@ const SectionWrapper = ({className='', children}) => {
   return (
     <div
       className={cn(
-        'flex flex-col w-full min-h-[70vh] justify-center gap-10',
+        'flex flex-col w-full justify-center gap-10 px-10 py-20',
         className
       )}
     >

@@ -4,7 +4,7 @@ import { data, cardData } from '@/data/web-content/home/about-us.js'
 
 const About = () => {
     return (
-      <SectionWrapper className={'items-center'}>
+      <SectionWrapper className={'items-center px-8'}>
         <h1>About</h1>
         <div className={'flex flex-row gap-10'}>
           <div className={'w-[40%] content-center'}>

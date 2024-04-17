@@ -126,10 +126,10 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
-    --text-heading: var(--white-a8);
-    --text-body: var(--white-a6);
+    --text-heading: var(--white-a10);
+    --text-body: var(--white-a8);
     --text-body-inactive: var(--white-a8);
-    --text-muted: var(--white-a5);
+    --text-muted: var(--white-a6);
 
     --shadow: var(--slate-1);
     --table-header: var(--gray-4);
@@ -178,9 +178,21 @@
     font-weight: bolder !important;
   }
 
-  h4,
-  h5,
-  h6,
+  h4 {
+    font-size: 1.25rem !important;
+    color: var(--text-heading) !important;
+    font-weight: bolder !important;
+  }
+  h5 {
+    font-size: 1.125rem !important;
+    color: var(--text-heading) !important;
+    font-weight: bolder !important;
+  }
+  h6 {
+    font-size: 1rem !important;
+    color: var(--text-heading) !important;
+    font-weight: bold !important;
+  }
   a {
     color: var(--active-link) !important;
     font-weight: normal !important;
@@ -188,6 +200,7 @@
 
   p {
     color: var(--text-body) !important;
+    font-weight: normal !important;
     overflow-wrap: break-word !important;
   }
 

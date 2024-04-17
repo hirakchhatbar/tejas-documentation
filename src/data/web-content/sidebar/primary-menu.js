@@ -1,15 +1,15 @@
-import Installation
-  from '@/components/layouts/Documentation/Content/Installation.jsx'
+import Installation from '@/components/layouts/Documentation/Content/Installation.jsx'
 import {
   CircleDotIcon,
   CrosshairIcon,
   DownloadIcon,
   FilesIcon,
-  PlaneIcon,
+  HandIcon,
   RouteIcon,
   SplitIcon,
   SquareTerminalIcon
 } from 'lucide-react'
+import HelloWorld from '@/components/layouts/Documentation/Content/HelloWorld.jsx'
 
 const primaryMenu = [
   {
@@ -19,24 +19,20 @@ const primaryMenu = [
     path: '/docs/installation'
   },
   {
-    Icon: PlaneIcon,
-    title: 'Getting Started',
-    path: '/docs/getting-started'
+    Icon: HandIcon,
+    Component: HelloWorld,
+    title: 'Hello, World!',
+    path: '/docs/hello-world'
   },
   {
     Icon: RouteIcon,
-    title: 'Routing',
+    title: 'Routing (Targets)',
     path: '/docs/routing'
   },
   {
     Icon: SplitIcon,
     title: 'Middlewares',
     path: '/docs/middlewares'
-  },
-  {
-    Icon: CrosshairIcon,
-    title: 'Targets',
-    path: '/docs/targets'
   },
   {
     Icon: CircleDotIcon,

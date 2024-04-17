@@ -20,7 +20,14 @@ module.exports = {
       sans: ["Noto Sans", "sans-serif"],
     },
     extend: {
+      gridTemplateColumns: {
+        'doc-accordion': '2fr 4fr',
+      },
       colors: {
+        background: {
+          DEFAULT: "var(--background)",
+          secondary: "var(--background-secondary)",
+        },
         primary: {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
@@ -38,6 +45,7 @@ module.exports = {
         },
         heading: "var(--text-heading)",
         body: "var(--text-body)",
+        muted: "var(--text-muted)",
       },
       borderRadius: {
         lg: "var(--radius)",

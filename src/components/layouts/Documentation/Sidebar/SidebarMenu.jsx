@@ -24,7 +24,7 @@ const SidebarMenu = () => {
   }, [location, navigate, setSelectedPrimaryMenu])
 
   return (
-    <div className="flex flex-col gap-3 w-full">
+    <div className="flex flex-col gap-2 w-full">
       {primaryMenu.map((item, index) => (
         <Link key={index} to={item.path}
               className={cn(

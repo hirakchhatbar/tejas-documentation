@@ -3,7 +3,7 @@ export default function NavbarLogo() {
   return (
     <div>
       <img
-        src={'./logotype.svg'}
+        src={'/logotype.svg'}
         className="navbar-logo"
         alt="logo"
       />
