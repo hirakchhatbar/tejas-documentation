@@ -1,15 +1,17 @@
-import FadingText from '@/components/shared/FadingText.jsx'
 import CodeBlock from '@/components/shared/CodeBlock.jsx'
-import { themes } from 'prism-react-renderer'
+import FadingText from '@/components/shared/FadingText.jsx'
+import { Button } from '@/components/ui/button.jsx'
 import initializeTejas from '@/data/code-blocks/initialize-tejas.js'
+import { ExternalLinkIcon } from 'lucide-react'
+import { themes } from 'prism-react-renderer'
 
 const Header = () => {
   return (
     <div
-      className={'flex flex-col h-[calc(100vh-102px)] justify-center gap-10'}
+      className={'flex flex-col h-[calc(60vh)] justify-center gap-10'}
     >
       <div className={'flex flex-col self-center gap-3'}>
-        <h1 className={'text-4xl text-heading'}>
+        <h1>
           A Node Framework For Powerful Backend Services
         </h1>
         <FadingText
@@ -21,17 +23,22 @@ const Header = () => {
       </div>
 
       <div className={'w-[60%] self-center grid grid-cols-2 gap-3'}>
-        <div id='termynal' data-termynal>
-          <span data-ty='input'>npx fly-tejas</span>
+        <div id="termynal" data-termynal>
+          <span data-ty="input">npx fly-tejas</span>
         </div>
 
         <CodeBlock
           language={'javascript'}
           theme={themes.dracula}
           code={initializeTejas}
-          className={'bg-dracula rounded-md overflow-hidden'}
+          className={'bg-card rounded-md overflow-hidden'}
         />
       </div>
+
+      <Button variant={'outline'} size={'lg'} className={'self-center'}>
+        Get Started
+        <ExternalLinkIcon className={'w-4 h-4 text-body ml-2'} />
+      </Button>
     </div>
   )
 }
