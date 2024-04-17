@@ -22,7 +22,7 @@ const features = [
   },
   {
     Icon: SplitIcon,
-    title: "Middleware Compatible",
+    title: "Express Middlewares",
     description:
       "Fully compatible with Express middlewares, as well as the ability to build te.js middlewares."
   },
