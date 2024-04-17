@@ -21,6 +21,13 @@ module.exports = {
     },
     extend: {
       colors: {
+        primary: {
+          DEFAULT: "var(--primary)",
+          foreground: "var(--primary-foreground)",
+        },
+        card: {
+          DEFAULT: "var(--card)",
+        },
         border: {
           DEFAULT: "var(--border)",
           muted: "var(--border-muted)",

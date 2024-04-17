@@ -89,22 +89,22 @@
   }
 
   .dark {
-    --gradient-start-primary: var(--slate-2);
-    --gradient-end-primary: var(--slate-3);
+    --gradient-start-primary: #051024;
+    --gradient-end-primary: #030A1C;
 
-    --background: var(--slate-1);
+    --background: #030A1C;
     --foreground: var(--slate-4);
 
-    --card: var(--slate-2);
+    --card: #051024;
     --card-foreground: var(--slate-8);
 
     --popover: var(--slate-2);
     --popover-foreground: var(--gray-12);
 
-    --primary: var(--grass-8);
+    --primary: var(--sky-6);
     --primary-foreground: var(--gray-12);
 
-    --secondary: var(--sky-6);
+    --secondary: var(--sky-4);
     --secondary-foreground: var(--gray-11);
 
     --switch-unchecked: var(--gray-7);
@@ -117,7 +117,7 @@
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: var(--gray-7);
+    --border: #0B1C3E;
     --border-dark-1: var(--gray-8);
     --border-muted: var(--gray-12);
 
@@ -126,10 +126,10 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
 
-    --text-heading: var(--white-a10);
-    --text-body: var(--white-a8);
+    --text-heading: var(--white-a8);
+    --text-body: var(--white-a6);
     --text-body-inactive: var(--white-a8);
-    --text-muted: var(--white-a7);
+    --text-muted: var(--white-a5);
 
     --shadow: var(--slate-1);
     --table-header: var(--gray-4);
@@ -161,9 +161,20 @@
     background: var(--background);
   }
 
-  h1,
-  h2,
+  h1 {
+    font-size: 2.25rem !important;
+    color: var(--text-heading) !important;
+    font-weight: bolder !important;
+  }
+  h2 {
+    font-size: 1.875rem !important;
+    color: var(--text-heading) !important;
+    font-weight: bolder !important;
+  }
+
   h3 {
+    font-size: 1.5rem !important;
+    color: var(--text-heading) !important;
     font-weight: bolder !important;
   }
 
@@ -175,12 +186,13 @@
   }
 
   p {
+    color: var(--text-body) !important;
     overflow-wrap: break-word !important;
   }
 
   table {
     border-collapse: separate;
-    border: solid var(--border-table) 1px;
+    border: solid var(--border-muted) 1px;
     border-radius: 6px;
     border-spacing: 0 !important;
   }

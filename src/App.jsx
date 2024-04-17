@@ -1,8 +1,9 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import './assets/index.css'
+import Footer from '@/pages/Footer/Footer.jsx'
+import Navbar from '@/pages/Navbar/Navbar.jsx'
 import routes from '@/routes.js'
 import { useMemo } from 'react'
-import Navbar from '@/pages/Navbar/Navbar.jsx'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import './assets/index.css'
 
 function App() {
   const useRoutes = useMemo(
@@ -17,12 +18,14 @@ function App() {
     <BrowserRouter>
       <div className={'flex flex-col w-full h-full'}>
         <Navbar />
-        <div className={"w-full items-center px-8 py-4"}>
+        <div
+          className={'flex w-full place-content-center items-center p-8'}>
           <Routes>
             {useRoutes}
-            <Route path='*' element={<Navigate to='/' />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   )

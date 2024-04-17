@@ -1,3 +1,11 @@
+.primary-gradient {
+    background: linear-gradient(
+            20deg,
+            var(--gradient-start-primary),
+            var(--gradient-end-primary)
+    );
+}
+
 .container {
     max-width: 100% !important;
     display: flex;
@@ -17,13 +25,13 @@
 }
 
 .border-table {
-    border-top: solid 1px var(--border-table) !important;
-    border-bottom: solid 1px var(--border-table) !important;
+    border-top: solid 1px var(--border-muted) !important;
+    border-bottom: solid 1px var(--border-muted) !important;
     padding-right: 1rem !important;
 }
 
 .border-muted {
-    border: solid 1px var(--border-table) !important;
+    border: solid 1px var(--border-muted) !important;
 }
 
 .border {
@@ -235,17 +243,21 @@
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
     color: var(--text-muted) !important;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
     color: var(--text-muted) !important;
-    opacity:  1;
+    opacity: 1;
 }
+
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
     color: var(--text-muted) !important;
-    opacity:  1;
+    opacity: 1;
 }
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: var(--text-muted) !important;
 }
+
 ::-ms-input-placeholder { /* Microsoft Edge */
     color: var(--text-muted) !important;
 }
