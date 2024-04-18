@@ -65,9 +65,9 @@ const BuildHelloWorld = () => {
     </div>
   )
   const content = (
-    <h6>Congratulations, You&apos;re now ready to <Link to={'/docs/hello-world'}
+    <h3>Congratulations, You&apos;re now ready to <Link to={'/docs/hello-world'}
                                                         className={'bold'}>get
-      started!</Link></h6>
+      started!</Link></h3>
 
   )
 

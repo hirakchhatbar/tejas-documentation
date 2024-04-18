@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 const PortSpan = () => {
   return (
     <p className={'text-body'}>
-      <span className={'command'}>port:</span> Port to run your
-      project on. Default is 1403
+      <span className={'command'}>port:</span> Port to run your project on.
+      Default is 1403
     </p>
   )
 }
@@ -35,10 +35,13 @@ const LogExceptionsSpan = () => {
 const DirTargetsSpan = () => {
   return (
     <p className={'text-body'}>
-      <span className={'command'}>dir.targets:</span> Directory
-      where you will put all your <Link className={'underline'}
-                                        to={'/docs/routing'}>target</Link> files.
-      A target file should end with .target.js extension.
+      <span className={'command'}>dir.targets:</span> Directory where you will
+      put all your{' '}
+      <Link className={'underline'} to={'/docs/routing'}>
+        target
+      </Link>{' '}
+      files that will define routes. A target file should end with .target.js
+      extension.
     </p>
   )
 }

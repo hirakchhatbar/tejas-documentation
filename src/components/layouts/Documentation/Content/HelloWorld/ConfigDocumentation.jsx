@@ -6,20 +6,20 @@ import EnvConfig
   from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/EnvConfig.jsx'
 import TejasConfigJson
   from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/TejasConfigJson.jsx'
-import helloWorldStore
-  from '@/components/layouts/Documentation/Content/HelloWorld/HelloWorldStore.jsx'
+
 import {
   Tabs,
   TabsContent,
   TabsList,
   TabsTrigger
 } from '@/components/ui/tabs.jsx'
+import documentationStore from '@/pages/Docuementation/DocumentationStore.jsx'
 
 const ConfigDocumentation = () => {
 
-  const selectedConfigOption = helloWorldStore(
+  const selectedConfigOption = documentationStore(
     (state) => state.selectedConfigOption)
-  const setSelectedConfigOption = helloWorldStore(
+  const setSelectedConfigOption = documentationStore(
     (state) => state.setSelectedConfigOption)
 
   return (

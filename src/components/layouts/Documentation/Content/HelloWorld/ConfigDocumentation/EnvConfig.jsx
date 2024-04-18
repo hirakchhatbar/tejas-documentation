@@ -15,7 +15,7 @@ const EnvConfig = () => {
           Create a .env file in the root of your project if you haven&apos;t
           already</p>
 
-        <Card className={'p-4  flex flex-col w-full !border-card-alert border'}>
+        <Card className={'p-4  flex flex-col w-full border-error'}>
           <p>.env only supports <span
             className={'text-heading'}>UPPERCASE</span> keys. Nested
             configuration

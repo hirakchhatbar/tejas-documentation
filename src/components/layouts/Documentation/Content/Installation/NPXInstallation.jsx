@@ -20,7 +20,7 @@ const NPXInstallation = () => {
         alt={'Project Structure'}
       />
 
-      <h6>Congratulations! You&apos;re now ready to <Link to={'/docs/hello-world'} className={"bold"}>Get Started!</Link></h6>
+      <h3>Congratulations! You&apos;re now ready to <Link to={'/docs/hello-world'} className={"bold"}>Get Started!</Link></h3>
     </div>
   )
 }

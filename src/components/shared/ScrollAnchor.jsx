@@ -13,7 +13,7 @@ function ScrollAnchor() {
     if (lastHash.current && document.getElementById(lastHash.current)) {
       setTimeout(() => {
         document.getElementById(lastHash.current)?.
-          scrollIntoView({ behavior: 'smooth', block: 'start' })
+          scrollIntoView({ behavior: 'smooth', block: 'nearest' })
         lastHash.current = ''
       }, 100)
     }

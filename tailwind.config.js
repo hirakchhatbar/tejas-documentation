@@ -24,6 +24,10 @@ module.exports = {
         'doc-accordion': '2fr 4fr',
       },
       colors: {
+        accent: {
+          DEFAULT: "var(--accent)",
+          muted: "var(--accent-muted)",
+        },
         background: {
           DEFAULT: "var(--background)",
           secondary: "var(--background-secondary)",
@@ -47,6 +51,8 @@ module.exports = {
         heading: "var(--text-heading)",
         body: "var(--text-body)",
         muted: "var(--text-muted)",
+        success: "var(--success)",
+        error: "var(--error)",
       },
       borderRadius: {
         lg: "var(--radius)",

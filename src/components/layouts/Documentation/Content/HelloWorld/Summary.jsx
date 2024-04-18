@@ -1,16 +1,16 @@
 import CodeBlock from '@/components/shared/CodeBlock.jsx'
-import DocumentationAccordionItem
-  from '@/components/shared/Documentation/DocumentationAccordionItem.jsx'
-import DocumentationAccordionTrigger
-  from '@/components/shared/Documentation/DocumentationAccordionTrigger.jsx'
+import DocumentationAccordionItem from '@/components/shared/Documentation/DocumentationAccordionItem.jsx'
+import DocumentationAccordionTrigger from '@/components/shared/Documentation/DocumentationAccordionTrigger.jsx'
 import { Accordion } from '@/components/ui/accordion.jsx'
 import appJs from '@/data/code-blocks/hello-world/appjs.jsx'
-import {
-  configFileBasic
-} from '@/data/code-blocks/hello-world/configuration.jsx'
+import { configFileBasic } from '@/data/code-blocks/hello-world/configuration.jsx'
 import { tejasTheme } from '@/lib/code-block-themes.js'
 import { cn } from '@/lib/utils.js'
 import { Link } from 'react-router-dom'
+import ConfigDocumentation from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation.jsx'
+import { Separator } from '@/components/ui/separator.jsx'
+import HTTPRequestLogs from '@/components/layouts/Documentation/Content/HelloWorld/HTTPRequestLogs.jsx'
+import ExceptionLog from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/ExceptionLog.jsx'
 
 const ConfigFile = () => {
   const trigger = (
@@ -106,10 +106,8 @@ const RunApp = () => {
 
 const Summary = ({ className }) => {
   return (
-    <div className={cn(
-      'flex flex-col gap-5',
-      className
-    )}>
+    <div className={cn('flex flex-col gap-10', className)}>
+      <div className={"flex flex-col gap-5"}>
       <p>
         If you used our generator npx fly-tejas, you&apos;d have a full app with
         numerous JavaScript files and sub directories for various purposes. Go
@@ -118,17 +116,31 @@ const Summary = ({ className }) => {
       </p>
       <p>
         If you installed it manually, let&apos;s go step by step to setup a
-        simple
-        hello world program.
+        simple hello world program.
       </p>
 
-      <Accordion defaultValue={['setupConfig', 'appJS', 'runApp']}
-                 type={'multiple'}
-                 className={'flex-col grid gap-3'}>
+      <Accordion
+        defaultValue={['setupConfig', 'appJS', 'runApp']}
+        type={'multiple'}
+        className={'flex-col grid gap-3'}
+      >
         <ConfigFile />
         <SetupAppJs />
         <RunApp />
       </Accordion>
+      </div>
+
+      <Separator orientation={'horizontal'} />
+
+      <ConfigDocumentation />
+
+        <Separator orientation={'horizontal'} />
+
+        <HTTPRequestLogs />
+
+        <Separator orientation={'horizontal'} />
+
+        <ExceptionLog />
     </div>
   )
 }

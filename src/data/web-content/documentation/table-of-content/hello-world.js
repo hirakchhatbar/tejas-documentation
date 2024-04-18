@@ -24,9 +24,15 @@ const data = [
         link: '#arguments'
       }
     ]
-  }, {
+  },
+  {
     title: 'Understand HTTP Request Logs',
-    link: '#http-requests-logs',
-  }]
+    link: '#http-requests-logs'
+  },
+  {
+    title: 'Understand Exception Logs',
+    link: '#exception-logs'
+  }
+]
 
 export default data

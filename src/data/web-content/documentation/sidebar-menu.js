@@ -10,6 +10,7 @@ import {
   SquareTerminalIcon
 } from 'lucide-react'
 import HelloWorld from '@/components/layouts/Documentation/Content/HelloWorld.jsx'
+import Routing from '@/components/layouts/Documentation/Content/Routing.jsx'
 
 const sidebarMenu = [
   {
@@ -26,6 +27,7 @@ const sidebarMenu = [
   },
   {
     Icon: RouteIcon,
+    Component: Routing,
     title: 'Routing (Targets)',
     path: '/docs/routing'
   },
