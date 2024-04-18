@@ -10,26 +10,35 @@ import {
 } from '@/components/ui/carousel.jsx'
 import data from '@/data/web-content/home/features-extended.js'
 import Autoplay from 'embla-carousel-autoplay'
-import { themes } from 'prism-react-renderer'
+import { tejasTheme } from '@/lib/code-block-themes.js'
 
 const ItemImage = ({ image }) => {
   return (
-    <img
-      className={'rounded-none rounded-t-md border'}
-      src={image}
-      alt="Robust error handling"
-    />
+    <div
+      className={
+        'flex w-full h-full bg-background border rounded-none rounded-t-md p-4'
+      }
+    >
+      <img
+        src={image}
+        alt='Robust error handling'
+      />
+    </div>
   )
 }
 
 const ItemCodeBlock = ({ code }) => {
   return (
-    <div className={'flex w-full h-full bg-background rounded-md border'}>
+    <div
+      className={
+        'flex w-full h-full bg-background border rounded-none rounded-t-md'
+      }
+    >
       <CodeBlock
         language={'javascript'}
-        theme={themes.dracula}
+        theme={tejasTheme}
         code={code}
-        className={'rounded-none rounded-t-md overflow-hidden'}
+        className={' overflow-hidden'}
       />
     </div>
   )
