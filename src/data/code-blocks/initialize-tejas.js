@@ -1,8 +1,8 @@
-const initializeTejas = `const tejas = new Tejas();
+const initializeTejas = `import { Tejas } from 'te.js';
+
+const tejas = new Tejas();
 tejas.takeOff();
 
-// Run node app.js to start the server
-
-// YES, IT"S AS SIMPLE AS THAT!`;
+// As simple as that!`;
 
 export default initializeTejas;

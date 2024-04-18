@@ -1,8 +1,9 @@
+import ScrollAnchor from '@/components/shared/ScrollAnchor.jsx'
 import Footer from '@/pages/Footer/Footer.jsx'
 import Navbar from '@/pages/Navbar/Navbar.jsx'
 import routes from '@/routes.js'
 import { useMemo } from 'react'
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './assets/index.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollAnchor />
       <div className={'flex flex-col w-full h-full'}>
         <Navbar />
         <div

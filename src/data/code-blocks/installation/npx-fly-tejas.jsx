@@ -6,16 +6,16 @@ const npxFlyTejas = (
       data-termynal
     >
       <span data-ty='input' data-ty-prompt={'>'}>
-        <span className={'text-yellow-600 font-bold'}>npx</span> fly-tejas
+        <span className={'command font-bold'}>npx</span> fly-tejas
       </span>
       <div className={'flex flex-col gap-1'}>
-        <span data-ty className={'text-body'}>
+        <span data-ty className={'data-ty-message'}>
           Need to install the following packages:
         </span>
-        <span data-ty className={'text-body'}>
+        <span data-ty className={'data-ty-message'}>
           fly-tejas@4.1.18
         </span>
-        <span data-ty className={'text-body'}>
+        <span data-ty className={'data-ty-message'}>
           Ok to proceed? (y)
         </span>
       </div>

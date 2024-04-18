@@ -7,16 +7,19 @@
  */
 
 :root {
-    --color-bg: #252a33;
-    --color-text: var(--text-heading);
-    --color-text-subtle: var(--text-muted);
+    --color-bg: var(--card);
+    --color-text: var(--text-terminal-normal);
+    --color-text-subtle: var(--text-termynal-light);
 }
 
 [data-termynal] {
     width: 750px;
     max-width: 100%;
-    background: var(--dracula);
-    color: var(--color-text);
+    background: var(--card);
+    border-color: var(--border);
+    border-width: 1px;
+    font-weight: normal;
+    color: var(--text-terminal-normal);
     font-size: 18px;
     font-family: 'Fira Mono', Consolas, Menlo, Monaco, 'Courier New', Courier, monospace;
     border-radius: 6px;
@@ -44,7 +47,8 @@
 [data-termynal]:after {
     content: 'te.js';
     position: absolute;
-    color: var(--text-heading);
+    color: var(--text-termynal-dark);
+    font-weight: bold;
     top: 5px;
     left: 0;
     width: 100%;
@@ -66,7 +70,9 @@
 [data-ty="input"]:before,
 [data-ty-prompt]:before {
     margin-right: 0.75em;
-    color: var(--color-text-subtle);
+    font-size: small;
+    font-weight: lighter;
+    color: var(--text-muted);
 }
 
 [data-ty="input"]:before {
@@ -85,6 +91,16 @@
     animation: blink 1s infinite;
 }
 
+.data-ty-message {
+    font-size: medium;
+    font-weight: lighter;
+    color: var(--text-muted);
+}
+
+.command {
+    color: var(--text-termynal-command);
+    font-weight: bold;
+}
 
 /* Cursor animation */
 

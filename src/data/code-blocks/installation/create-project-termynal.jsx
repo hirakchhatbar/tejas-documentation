@@ -8,11 +8,12 @@ const createProjectTermynal = (
 
     <div
       className={'flex flex-col w-full bg-background border gap-3'}
-      id='termynal'
+      id="termynal"
       data-termynal
     >
-      <span data-ty='input'>mkdir my-app</span>
-      <span data-ty='input'>cd my-app</span>
+      <span data-ty="input"><span
+        className={'command'}>mkdir</span> my-app</span>
+      <span data-ty="input"><span className={'command'}>cd</span> my-app</span>
     </div>
   </div>
 )

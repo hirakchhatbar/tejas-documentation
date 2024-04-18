@@ -3,12 +3,12 @@ import CodeBlock from '@/components/shared/CodeBlock.jsx'
 import FadingText from '@/components/shared/FadingText.jsx'
 import { Button } from '@/components/ui/button.jsx'
 import initializeTejas from '@/data/code-blocks/initialize-tejas.js'
+import { tejasThemeBgCard } from '@/lib/code-block-themes.js'
 import { ExternalLinkIcon } from 'lucide-react'
-import { themes } from 'prism-react-renderer'
 import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
   return (
     <SectionWrapper>
       <div className={'flex flex-col items-center'}>
@@ -25,15 +25,15 @@ const Header = () => {
       </div>
 
       <div className={'w-[60%] self-center grid grid-cols-2 gap-3'}>
-        <div id='termynal' data-termynal>
-          <span data-ty='input'>npx fly-tejas</span>
+        <div id="termynal" data-termynal>
+          <span data-ty="input">npx fly-tejas</span>
         </div>
 
         <CodeBlock
           language={'javascript'}
-          theme={themes.dracula}
+          theme={tejasThemeBgCard}
           code={initializeTejas}
-          className={'bg-card rounded-md overflow-hidden'}
+          className={'border rounded-md overflow-hidden'}
         />
       </div>
 

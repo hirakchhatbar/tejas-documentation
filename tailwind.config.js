@@ -34,6 +34,7 @@ module.exports = {
         },
         card: {
           DEFAULT: "var(--card)",
+          alert: "var(--card-alert)",
         },
         border: {
           DEFAULT: "var(--border)",

@@ -15,7 +15,7 @@ import { themes } from 'prism-react-renderer'
 const ItemImage = ({ image }) => {
   return (
     <img
-      className={'rounded-none rounded-t-md'}
+      className={'rounded-none rounded-t-md border'}
       src={image}
       alt="Robust error handling"
     />
@@ -24,7 +24,7 @@ const ItemImage = ({ image }) => {
 
 const ItemCodeBlock = ({ code }) => {
   return (
-    <div className={'flex w-full h-full bg-dracula rounded-md'}>
+    <div className={'flex w-full h-full bg-background rounded-md border'}>
       <CodeBlock
         language={'javascript'}
         theme={themes.dracula}

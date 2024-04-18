@@ -11,7 +11,7 @@ import {
 } from 'lucide-react'
 import HelloWorld from '@/components/layouts/Documentation/Content/HelloWorld.jsx'
 
-const primaryMenu = [
+const sidebarMenu = [
   {
     Icon: DownloadIcon,
     Component: Installation,
@@ -51,4 +51,4 @@ const primaryMenu = [
   }
 ]
 
-export default primaryMenu
+export default sidebarMenu

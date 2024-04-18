@@ -1,11 +1,13 @@
+import { tejasTheme } from '@/lib/code-block-themes.js'
 import { cn } from '@/lib/utils.js'
-import { Highlight, Prism, themes } from 'prism-react-renderer'
-import { useState } from 'react'
-import { CheckCheckIcon, CopyIcon } from 'lucide-react'
 import copy from 'copy-to-clipboard'
-
+import { CheckCheckIcon, CopyIcon } from 'lucide-react'
+import { Highlight, Prism } from 'prism-react-renderer'
+import { useState } from 'react'
 import bashLang from 'refractor/lang/bash'
+
 import jsonLang from 'refractor/lang/json'
+
 bashLang(Prism);
 jsonLang(Prism);
 
@@ -13,7 +15,7 @@ const CodeBlock = ({
   className = '',
   code = '',
   language = 'JavaScript',
-  theme = themes.dracula,
+  theme = tejasTheme,
   withLineNumbers = true,
   withCopy = false
 }) => {

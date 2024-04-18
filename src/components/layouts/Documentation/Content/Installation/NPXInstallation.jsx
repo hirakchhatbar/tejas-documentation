@@ -1,4 +1,5 @@
 import npxFlyTejas from '@/data/code-blocks/installation/npx-fly-tejas.jsx'
+import { Link } from 'react-router-dom'
 
 const NPXInstallation = () => {
   return (
@@ -19,7 +20,7 @@ const NPXInstallation = () => {
         alt={'Project Structure'}
       />
 
-      <h3>Congratulations! You're now ready to <a href={''} className={"bold"}>Get Started</a></h3>
+      <h6>Congratulations! You&apos;re now ready to <Link to={'/docs/hello-world'} className={"bold"}>Get Started!</Link></h6>
     </div>
   )
 }

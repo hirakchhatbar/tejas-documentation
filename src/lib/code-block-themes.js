@@ -8,4 +8,12 @@ const tejasTheme = {
   }
 }
 
-export { tejasTheme }
+const tejasThemeBgCard = {
+  ...tejasTheme,
+  plain: {
+    ...tejasTheme.plain,
+    backgroundColor: 'var(--card)'
+  }
+}
+
+export { tejasTheme, tejasThemeBgCard }

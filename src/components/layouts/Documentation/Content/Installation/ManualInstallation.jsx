@@ -1,18 +1,22 @@
+import DocumentationAccordionItem
+  from '@/components/shared/Documentation/DocumentationAccordionItem.jsx'
+import DocumentationAccordionTrigger
+  from '@/components/shared/Documentation/DocumentationAccordionTrigger.jsx'
 import { Accordion } from '@/components/ui/accordion.jsx'
-import DocumentationAccordionItem from '@/components/shared/DocumentationAccordionItem.jsx'
-import createProjectTermynal from '@/data/code-blocks/installation/create-project-termynal.jsx'
+import createProjectTermynal
+  from '@/data/code-blocks/installation/create-project-termynal.jsx'
+import installTejsTermynal
+  from '@/data/code-blocks/installation/install-tejs-termynal.jsx'
 import npmInit from '@/data/code-blocks/installation/npm-init-termynal.jsx'
-import installTejsTermynal from '@/data/code-blocks/installation/install-tejs-termynal.jsx'
+import { Link } from 'react-router-dom'
 
 const accordionItemValues = []
 
 const SetupDirectory = () => {
-  const trigger = (
-    <div className={'flex flex-col items-start text-start gap-2'}>
-      <h6>1. Create a new folder</h6>
-      <p className={"text-sm"}>Skip if you already have a project folder</p>
-    </div>
-  )
+
+  const trigger = <DocumentationAccordionTrigger
+    title={'1. Create a new folder'}
+    desc={'Skip if you already have a project folder'} />
   const content = createProjectTermynal
 
   return (
@@ -24,12 +28,10 @@ const SetupDirectory = () => {
   )
 }
 const InitProject = () => {
-  const trigger = (
-    <div className={'flex flex-col items-start text-start gap-2'}>
-      <h6>2. Initialize your project</h6>
-      <p className={"text-sm text-muted font-normal"}>Skip if you know how to run npm init.</p>
-    </div>
-  )
+  const trigger = <DocumentationAccordionTrigger
+    title={'2. Initialize your project'}
+    desc={'Skip if you know how to generate a package.json'} />
+
   const content = npmInit
 
   return (
@@ -41,11 +43,10 @@ const InitProject = () => {
   )
 }
 const InstallTejas = () => {
-  const trigger = (
-    <div className={'flex flex-col items-start text-start gap-2'}>
-      <h6>3. Install te.js</h6>
-    </div>
-  )
+  const trigger = <DocumentationAccordionTrigger
+    title={'3. Install te.js'}
+  />
+
   const content = installTejsTermynal
 
   return (
@@ -53,6 +54,28 @@ const InstallTejas = () => {
       triggerChildren={trigger}
       contentChildren={content}
       value={'installTejas'}
+    />
+  )
+}
+
+const BuildHelloWorld = () => {
+  const trigger = (
+    <div className={'flex flex-col items-start text-start gap-2'}>
+      <h6>4. Build a Hello World App</h6>
+    </div>
+  )
+  const content = (
+    <h6>Congratulations, You&apos;re now ready to <Link to={'/docs/hello-world'}
+                                                        className={'bold'}>get
+      started!</Link></h6>
+
+  )
+
+  return (
+    <DocumentationAccordionItem
+      triggerChildren={trigger}
+      contentChildren={content}
+      value={'buildHelloWorld'}
     />
   )
 }
@@ -68,6 +91,7 @@ const ManualInstallation = () => {
         <SetupDirectory />
         <InitProject />
         <InstallTejas />
+        <BuildHelloWorld />
       </Accordion>
     </div>
   )

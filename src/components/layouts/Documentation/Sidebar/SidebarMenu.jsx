@@ -1,4 +1,4 @@
-import primaryMenu from '@/data/web-content/sidebar/primary-menu.js'
+import sidebarMenu from '@/data/web-content/documentation/sidebar-menu.js'
 import { cn } from '@/lib/utils.js'
 import docStore from '@/pages/Docuementation/DocumentationStore.jsx'
 import { useEffect } from 'react'
@@ -13,7 +13,7 @@ const SidebarMenu = () => {
 
   useEffect(() => {
     const pathname = location.pathname
-    const menu = primaryMenu.find(
+    const menu = sidebarMenu.find(
       (item) => item.path === pathname)
     if (!menu) {
       navigate('/docs/installation')
@@ -25,7 +25,7 @@ const SidebarMenu = () => {
 
   return (
     <div className="flex flex-col gap-2 w-full">
-      {primaryMenu.map((item, index) => (
+      {sidebarMenu.map((item, index) => (
         <Link key={index} to={item.path}
               className={cn(
                 'flex flex-row items-center gap-2 px-6 py-3 rounded-md',
