@@ -6,6 +6,7 @@ import { Separator } from '@/components/ui/separator.jsx'
 import { Card } from '@/components/ui/card.jsx'
 import { Link } from 'react-router-dom'
 import RegisterTargets from '@/components/layouts/Documentation/Content/Routing/RegisterTargets.jsx'
+import Endpoints from '@/components/layouts/Documentation/Content/Routing/Endpoints.jsx'
 
 const Summary = ({ className }) => {
   return (
@@ -28,8 +29,9 @@ const Summary = ({ className }) => {
       </div>
 
       <Separator orientation={'horizontal'} />
-
       <RegisterTargets />
+      <Separator orientation={'horizontal'} />
+      <Endpoints />
     </div>
   )
 }

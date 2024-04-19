@@ -16,7 +16,21 @@ const data = [
     ]
   },
   {
-    title: 'Methods',
+    title: "Endpoints",
+    link: '#endpoints',
+    subItems: [
+      {
+        title: 'Create an endpoint',
+        value: 'create-an-endpoints',
+      },
+      {
+        title: 'Group related endpoints',
+        value: 'group-related-endpoints',
+      }
+    ]
+  },
+  {
+    title: 'Method Free Routing',
     link: '#methods',
     subItems: [
       {

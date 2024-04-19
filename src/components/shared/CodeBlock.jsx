@@ -37,7 +37,10 @@ const CodeBlock = ({
                   >
                     <div className={'flex flex-row gap-5'}>
                       {withLineNumbers && (
-                        <p className={'!text-gray-600'}>{i + 1}</p>
+                        <p className={cn(
+                          '!text-gray-600',
+                          i < 9 ? 'w-4' : 'w-5',
+                        )}>{i + 1}</p>
                       )}
                       <div>
                         {line.map((token, key) => {
