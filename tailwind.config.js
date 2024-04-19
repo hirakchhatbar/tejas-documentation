@@ -36,6 +36,10 @@ module.exports = {
           DEFAULT: "var(--primary)",
           foreground: "var(--primary-foreground)",
         },
+        secondary: {
+          DEFAULT: "var(--secondary)",
+          foreground: "var(--secondary-foreground)",
+        },
         card: {
           DEFAULT: "var(--card)",
           alert: "var(--card-alert)",

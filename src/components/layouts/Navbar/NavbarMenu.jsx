@@ -24,14 +24,9 @@ const NavbarMenu = () => {
           </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuLink href={"/"} className={navigationMenuTriggerStyle()}>
+          <NavigationMenuLink target={"_blank"} href={"https://github.com/hirakchhatbar/te.js"} className={navigationMenuTriggerStyle()}>
             <p className={"!text-heading"}>GitHub</p>
             <ExternalLinkIcon className={'!text-body w-4 h-4 ml-2'} />
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <NavigationMenuLink href={"/faq"} className={navigationMenuTriggerStyle()}>
-            <p className={"!text-heading"}>FAQ</p>
           </NavigationMenuLink>
         </NavigationMenuItem>
       </NavigationMenuList>

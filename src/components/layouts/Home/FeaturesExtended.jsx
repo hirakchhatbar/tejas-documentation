@@ -19,10 +19,7 @@ const ItemImage = ({ image }) => {
         'flex w-full h-full bg-background border rounded-none rounded-t-md p-4'
       }
     >
-      <img
-        src={image}
-        alt='Robust error handling'
-      />
+      <img src={image} alt='Robust error handling' />
     </div>
   )
 }
