@@ -21,11 +21,13 @@ const data = [
     subItems: [
       {
         title: 'Create an endpoint',
-        value: 'create-an-endpoints',
+        value: 'create-endpoint',
+        link: '#create-endpoint'
       },
       {
         title: 'Group related endpoints',
         value: 'group-related-endpoints',
+        link: '#group-related-endpoints'
       }
     ]
   },

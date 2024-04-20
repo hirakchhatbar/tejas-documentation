@@ -1,5 +1,6 @@
 import npxFlyTejas from '@/data/code-blocks/installation/npx-fly-tejas.jsx'
 import { Link } from 'react-router-dom'
+import { Card } from '@/components/ui/card.jsx'
 
 const NPXInstallation = () => {
   return (
@@ -13,14 +14,20 @@ const NPXInstallation = () => {
         Once completed successfully, it will create a project whose folder
         structure looks like this:
       </p>
-      <img
-        className={"rounded-md"}
-        width={'40%'}
-        src={'/images/project-structure.png'}
-        alt={'Project Structure'}
-      />
 
-      <h3>Congratulations! You&apos;re now ready to <Link to={'/docs/hello-world'} className={"bold"}>Get Started!</Link></h3>
+        <img
+          className={'rounded-md border p-4'}
+          width={'40%'}
+          src={'/images/project-structure.png'}
+          alt={'Project Structure'}
+        />
+
+      <h3>
+        Congratulations! You&apos;re now ready to{' '}
+        <Link to={'/docs/hello-world'} className={'bold'}>
+          Get Started!
+        </Link>
+      </h3>
     </div>
   )
 }

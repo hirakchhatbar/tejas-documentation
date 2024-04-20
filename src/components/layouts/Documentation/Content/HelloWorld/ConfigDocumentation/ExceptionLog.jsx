@@ -2,9 +2,11 @@ const ExceptionLogs = () => {
   return (
     <div id={'exception-logs'} className={'flex flex-col gap-5'}>
       <h3>Exception Logs</h3>
-      <p>A te.js application never dies. If there is an error, or you forgot to
+      <p>
+        A te.js application never dies. If there is an error, or you forgot to
         catch an exception, it will be logged in the console and appropriate
-        response will be sent to the client</p>
+        response will be sent to the client
+      </p>
 
       <div className={'flex flex-col gap-1'}>
         <p>Request log will have following components:</p>
@@ -29,9 +31,12 @@ const ExceptionLogs = () => {
 
       <div className={'flex flex-col gap-2'}>
         <span className={'text-muted'}>Example:</span>
-        <img src={'/images/robus-error-handling.png'}
-             width={'60%'}
-             alt={'Exception Logs'} />
+        <img
+          className={'rounded-md border p-4'}
+          src={'/images/robus-error-handling.png'}
+          width={'80%'}
+          alt={'Exception Logs'}
+        />
       </div>
     </div>
   )

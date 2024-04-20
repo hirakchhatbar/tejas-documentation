@@ -7,6 +7,7 @@ import { useState } from 'react'
 import bashLang from 'refractor/lang/bash'
 
 import jsonLang from 'refractor/lang/json'
+import { Card } from '@/components/ui/card.jsx'
 
 bashLang(Prism);
 jsonLang(Prism);
@@ -22,7 +23,7 @@ const CodeBlock = ({
   const [copied, setCopied] = useState(false)
 
   return (
-    <div className={cn(className, 'rounded-md')}>
+    <Card className={cn(className, 'p-2 w-full')}>
       <Highlight language={language} code={code} theme={theme} prism={Prism}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={cn(className, 'px-4 py-2 rounded-md')} style={style}>
@@ -82,7 +83,7 @@ const CodeBlock = ({
           </pre>
         )}
       </Highlight>
-    </div>
+    </Card>
   )
 }
 

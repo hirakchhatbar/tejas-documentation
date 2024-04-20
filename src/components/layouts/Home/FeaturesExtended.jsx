@@ -28,14 +28,14 @@ const ItemCodeBlock = ({ code }) => {
   return (
     <div
       className={
-        'flex w-full h-full bg-background border rounded-none rounded-t-md'
+        'flex w-full h-full'
       }
     >
       <CodeBlock
         language={'javascript'}
         theme={tejasTheme}
         code={code}
-        className={' overflow-hidden'}
+        className={'rounded-none rounded-t-md overflow-hidden'}
       />
     </div>
   )
@@ -60,11 +60,11 @@ const FeaturesExtended = () => {
                   {item.image && <ItemImage image={item.image} />}
                   {item.code && <ItemCodeBlock code={item.code} />}
 
-                  <Card
-                    className={'flex flex-col gap-5 text-center justify-center p-16 rounded-none rounded-b-md !border-t-0'}>
+                  <div
+                    className={'flex flex-col gap-5 text-center justify-center p-8 rounded-b-md border !border-t-0'}>
                     <h1>{item.title}</h1>
                     <p>{item.description}</p>
-                  </Card>
+                  </div>
                 </div>
               </CarouselItem>
             )
