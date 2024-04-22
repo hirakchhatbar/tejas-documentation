@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom'
 import { CheckCircleIcon, XCircleIcon } from 'lucide-react'
 import CodeBlock from '@/components/shared/CodeBlock.jsx'
 import {
   expressRouteFile,
-  expressRouting, tejasAppManualTarget,
+  expressRouting,
+  tejasAppManualTarget,
   tejasTargetFile
 } from '@/data/code-blocks/routing/express-vs-tejas-routing.js'
 import { tejasThemeBgCard } from '@/lib/code-block-themes.js'
-import appJs from '@/data/code-blocks/hello-world/appjs.jsx'
 
 const ManualRegister = () => {
   return (
@@ -45,8 +44,8 @@ const ManualRegister = () => {
           <CodeBlock
             code={expressRouting}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
 
@@ -54,8 +53,8 @@ const ManualRegister = () => {
           <CodeBlock
             code={expressRouteFile}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
         </div>
@@ -64,8 +63,8 @@ const ManualRegister = () => {
           <CodeBlock
             code={tejasAppManualTarget}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
 
@@ -73,8 +72,8 @@ const ManualRegister = () => {
           <CodeBlock
             code={tejasTargetFile}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
         </div>

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react'
 import HelloWorld from '@/components/layouts/Documentation/Content/HelloWorld.jsx'
 import Routing from '@/components/layouts/Documentation/Content/Routing.jsx'
+import Ammo from '@/components/layouts/Documentation/Content/Ammo.jsx'
 
 const sidebarMenu = [
   {
@@ -32,14 +33,15 @@ const sidebarMenu = [
     path: '/docs/routing'
   },
   {
+    Icon: CircleDotIcon,
+    Component: Ammo,
+    title: 'Ammo',
+    path: '/docs/ammo'
+  },
+  {
     Icon: SplitIcon,
     title: 'Middlewares',
     path: '/docs/middlewares'
-  },
-  {
-    Icon: CircleDotIcon,
-    title: 'Ammo',
-    path: '/docs/ammo'
   },
   {
     Icon: FilesIcon,

@@ -51,8 +51,8 @@ const AutoRegister = () => {
           <CodeBlock
             code={expressRouting}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
 
@@ -60,8 +60,8 @@ const AutoRegister = () => {
           <CodeBlock
             code={expressRouteFile}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
         </div>
@@ -70,8 +70,8 @@ const AutoRegister = () => {
           <CodeBlock
             code={appJs}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
 
@@ -81,8 +81,8 @@ const AutoRegister = () => {
           <CodeBlock
             code={tejasTargetFile}
             language={'javascript'}
-            showLineNumbers={true}
-            showCopy={false}
+            withLineNumbers={true}
+            withCopy={true}
             theme={tejasThemeBgCard}
           />
           <p className={"mt-2 !text-heading"}>Assuming that you have{' '}
