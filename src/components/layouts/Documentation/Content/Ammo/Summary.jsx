@@ -16,7 +16,7 @@ const Summary = ({ className }) => {
         </Card>
         <p> It provides a simpler and easier way to handle requests and
           responses.</p>
-        <ul className={'ml-6 list-disc'}>
+        <ul className={'ml-6 flex flex-col gap-1 list-disc'}>
           <li><span className={"text-heading"}>Streamlined Development:</span> The Ammo class simplifies
             the process of
             handling HTTP requests and responses, reducing boilerplate code and
