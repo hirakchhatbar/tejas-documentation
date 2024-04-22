@@ -1,28 +1,43 @@
 const data = [
   {
     title: 'Ammo',
-    link: '#ammo',
+    link: '#ammo'
+  },
+  {
+    title: 'Basics',
+    link: '#basics',
     subItems: [
       {
-        title: 'payload',
-        value: 'payload',
-        link: '#payload'
+        title: 'Body and Params (Payload)',
+        value: 'body-and-params',
+        link: '#body-and-params'
       },
       {
-        title: 'fire',
-        value: 'fire',
-        link: '#fire'
+        title: 'Headers',
+        value: 'headers',
+        link: '#headers'
       },
+      {
+        title: 'Send Response',
+        value: 'send-response',
+        link: '#send-response'
+      }
+    ]
+  },
+  {
+    title: 'Advanced',
+    link: '#advanced',
+    subItems: [
       {
         title: 'req and res',
         value: 'req-and-res',
         link: '#req-and-res'
       },
       {
-        title: 'Commonly used functions',
-        value: 'commonly-used-functions',
-        link: '#commonly-used-functions'
-      }
+        title: 'Other Properties',
+        value: 'other-properties',
+        link: '#others'
+      },
     ]
   }
 ]
