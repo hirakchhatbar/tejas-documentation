@@ -3,7 +3,7 @@ import Sidebar from '@/components/layouts/Documentation/Sidebar.jsx'
 
 const Documentation = () => {
   return (
-    <div className={'w-[100vw] min-h-[100vh] flex flex-row m-[-2rem]'}>
+    <div className={'w-[100vw] h-[calc(100vh-122px)] flex flex-row m-[-2rem]'}>
       <Sidebar />
       <Content />
     </div>

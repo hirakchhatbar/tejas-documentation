@@ -120,7 +120,6 @@ const Summary = ({ className }) => {
       </p>
 
       <Accordion
-        defaultValue={['setupConfig', 'appJS', 'runApp']}
         type={'multiple'}
         className={'flex-col grid gap-3'}
       >
