@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils.js'
 const Summary = ({ className }) => {
   return (
     <div className={cn('flex flex-col gap-10', className)}>
-      <div className={cn('flex flex-col gap-5')}>
+      <div id={'ammo'} className={cn('flex flex-col gap-5')}>
         <Card className={'p-4 border-error'}>
           <h5>
             Ammo is a powerful Object that wraps http.IncomingMessage and
