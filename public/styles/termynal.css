@@ -15,7 +15,11 @@
 [data-termynal] {
     width: 750px;
     max-width: 100%;
-    background: var(--card);
+    background: linear-gradient(
+            20deg,
+            var(--gradient-start-primary),
+            var(--gradient-end-primary)
+    );
     border-color: var(--border);
     border-width: 1px;
     font-weight: normal;

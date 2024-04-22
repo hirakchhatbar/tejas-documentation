@@ -1,5 +1,3 @@
-import AutoRegister
-  from '@/components/layouts/Documentation/Content/Routing/RegisterTargets/AutoRegister.jsx'
 import {
   Tabs,
   TabsContent,
@@ -7,6 +5,8 @@ import {
   TabsTrigger
 } from '@/components/ui/tabs.jsx'
 import documentationStore from '@/pages/Docuementation/DocumentationStore.jsx'
+import AutoRegister from '@/components/layouts/Documentation/Content/Routing/RegisterTargets/AutoRegister.jsx'
+import ManualRegister from '@/components/layouts/Documentation/Content/Routing/RegisterTargets/ManualRegister.jsx'
 
 const RegisterTargets = () => {
   const selectedRegisterTargetOption = documentationStore(
@@ -37,8 +37,11 @@ const RegisterTargets = () => {
             2. Manual
           </TabsTrigger>
         </TabsList>
-        <TabsContent value={}>
+        <TabsContent value={selectedRegisterTargetOption}>
           {selectedRegisterTargetOption === 'auto-register' && <AutoRegister />}
+          {selectedRegisterTargetOption === 'manual-register' && (
+            <ManualRegister />
+          )}
         </TabsContent>
       </Tabs>
     </div>

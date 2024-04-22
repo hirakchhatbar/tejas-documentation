@@ -4,7 +4,7 @@ const tejasTheme = {
   ...themes.dracula,
   plain: {
     ...themes.dracula.plain,
-    backgroundColor: 'var(--background)'
+    backgroundColor: 'var(--transparent)',
   }
 }
 
@@ -12,7 +12,7 @@ const tejasThemeBgCard = {
   ...tejasTheme,
   plain: {
     ...tejasTheme.plain,
-    backgroundColor: 'var(--card)'
+    backgroundColor: 'var(--transparent)',
   }
 }
 

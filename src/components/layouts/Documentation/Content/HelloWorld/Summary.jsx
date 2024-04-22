@@ -90,7 +90,7 @@ const RunApp = () => {
           to={'http://localhost:1403'}>http://localhost:1403</Link> in your
         favorite browser to
         verify</p>
-      <img className={'rounded-md'} src={'/images/tejas-tookoff.png'}
+      <img className={'rounded-md border'} src={'/images/tejas-tookoff.png'}
            alt={'Tejas took off'} />
     </div>
   )

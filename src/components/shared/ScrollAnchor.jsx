@@ -10,13 +10,12 @@ function ScrollAnchor() {
       lastHash.current = location.hash.slice(1) // safe hash for further use after navigation
     }
 
-    if (lastHash.current && document.getElementById(lastHash.current)) {
-      setTimeout(() => {
-        document.getElementById(lastHash.current)?.
-          scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-        lastHash.current = ''
-      }, 100)
-    }
+    setTimeout(() => {
+      document
+        .getElementById(lastHash.current)
+        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      lastHash.current = ''
+    }, 100)
   }, [location])
 
   return null
