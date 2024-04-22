@@ -22,23 +22,19 @@ const Endpoints = () => {
         <CodeBlock
           code={createEndpoint}
           language={'javascript'}
-          showLineNumbers={true}
-          showCopy={false}
+          withLineNumbers={true}
+          withCopy={true}
           theme={tejasThemeBgCard}
         />
       </div>
 
       <div id={'group-related-endpoints'} className={'flex flex-col gap-2'}>
         <h5>Group related endpoints</h5>
-        <p>
-          To create an endpoint, you use target.register, specifying the
-          endpoint path and a handler function that receives the ammo object.
-        </p>
         <CodeBlock
           code={groupEndpoints}
           language={'javascript'}
-          showLineNumbers={true}
-          showCopy={false}
+          withLineNumbers={true}
+          withCopy={true}
           theme={tejasThemeBgCard}
         />
       </div>

@@ -5,9 +5,6 @@ import { cn } from '@/lib/utils.js'
 import { Separator } from '@/components/ui/separator.jsx'
 import { Card } from '@/components/ui/card.jsx'
 import { Link } from 'react-router-dom'
-import RegisterTargets from '@/components/layouts/Documentation/Content/Routing/RegisterTargets.jsx'
-import Endpoints from '@/components/layouts/Documentation/Content/Routing/Endpoints.jsx'
-import MethodFreeRouting from '@/components/layouts/Documentation/Content/Routing/MethodFreeRouting.jsx'
 
 const Summary = ({ className }) => {
   return (
@@ -15,9 +12,7 @@ const Summary = ({ className }) => {
       <div className={cn('flex flex-col gap-5')}>
         <Card className={'p-4 border-error'}>
           <h5>
-            In te.js terminology, a router is called as a target and
-            <Link to={'#register-targets'}> target.register()</Link> is
-            equivalent to router.use().
+            Ammo is an object that wraps  http.ServerResponse
           </h5>
         </Card>
         <p>Routing with te.js is dead simple! Here is a basic example.</p>
@@ -30,11 +25,6 @@ const Summary = ({ className }) => {
       </div>
 
       <Separator orientation={'horizontal'} />
-      <RegisterTargets />
-      <Separator orientation={'horizontal'} />
-      <Endpoints />
-      <Separator orientation={'horizontal'} />
-      <MethodFreeRouting />
     </div>
   )
 }
