@@ -24,6 +24,7 @@ module.exports = {
         'doc-accordion': '2fr 4fr',
       },
       colors: {
+        transparent: "transparent",
         accent: {
           DEFAULT: "var(--accent)",
           muted: "var(--accent-muted)",

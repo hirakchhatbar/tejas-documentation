@@ -16,4 +16,12 @@ const tejasThemeBgCard = {
   }
 }
 
-export { tejasTheme, tejasThemeBgCard }
+const tejasThemeBgTransparent = {
+  ...themes.vsLight,
+  plain: {
+    ...tejasTheme.plain,
+    backgroundColor: 'var(--transparent)',
+  }
+}
+
+export { tejasTheme, tejasThemeBgCard, tejasThemeBgTransparent }

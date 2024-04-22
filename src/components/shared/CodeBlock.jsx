@@ -23,7 +23,7 @@ const CodeBlock = ({
   const [copied, setCopied] = useState(false)
 
   return (
-    <Card className={cn(className, 'p-2 w-full')}>
+    <div className={cn(className, 'p-2 w-full border')}>
       <Highlight language={language} code={code} theme={theme} prism={Prism}>
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre className={cn(className, 'px-4 py-2 rounded-md')} style={style}>
@@ -83,7 +83,7 @@ const CodeBlock = ({
           </pre>
         )}
       </Highlight>
-    </Card>
+    </div>
   )
 }
 
