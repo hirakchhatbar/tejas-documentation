@@ -1,3 +1,5 @@
+import AutoRegister
+  from '@/components/layouts/Documentation/Content/Routing/RegisterTargets/AutoRegister.jsx'
 import {
   Tabs,
   TabsContent,
@@ -35,7 +37,9 @@ const RegisterTargets = () => {
             2. Manual
           </TabsTrigger>
         </TabsList>
-        <TabsContent>Hello</TabsContent>
+        <TabsContent value={}>
+          {selectedRegisterTargetOption === 'auto-register' && <AutoRegister />}
+        </TabsContent>
       </Tabs>
     </div>
   )
