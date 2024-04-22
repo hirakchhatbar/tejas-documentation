@@ -34,13 +34,36 @@ const TableOfContent = ({ className }) => {
               />
               {item.subItems && item.subItems.length > 0 ? (
                 <div className={'flex flex-col gap-1'}>
-                  {item.subItems.map((subItem, i) => (
-                    <SubMenu
-                      key={`${i}-${subItem.link}`}
-                      text={`${index + 1}.${i + 1}. ${subItem.title}`}
-                      link={subItem.link}
-                    />
-                  ))}
+                  {item.subItems.map((subItem, i) => {
+                    return (
+                      <div
+                        key={`${i}-${subItem.link}`}
+                        className={'flex flex-col gap-2'}
+                      >
+                        <SubMenu
+                          text={`${index + 1}.${i + 1} ${subItem.title}`}
+                          link={subItem.link}
+                        />
+                        {subItem.subItems && subItem.subItems.length > 0 ? (
+                          <div className={'flex flex-col gap-1'}>
+                            {subItem.subItems.map((subSubItem, j) => {
+                              return (
+                                <div
+                                  key={`${j}-${subSubItem.link}`}
+                                  className={'flex flex-col gap-2 ml-4'}
+                                >
+                                  <SubMenu
+                                    text={`${index + 1}.${i + 1}.${j + 1} ${subSubItem.title}`}
+                                    link={subSubItem.link}
+                                  />
+                                </div>
+                              )
+                            })}
+                          </div>
+                        ) : null}
+                      </div>
+                    )
+                  })}
                 </div>
               ) : null}
             </div>

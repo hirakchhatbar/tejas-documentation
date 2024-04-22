@@ -1,5 +1,4 @@
-import Advanced
-  from '@/components/layouts/Documentation/Content/Ammo/Advanced.jsx'
+import Advanced from '@/components/layouts/Documentation/Content/Ammo/Advanced.jsx'
 import Basics from '@/components/layouts/Documentation/Content/Ammo/Basics.jsx'
 import { Card } from '@/components/ui/card.jsx'
 import { Separator } from '@/components/ui/separator.jsx'

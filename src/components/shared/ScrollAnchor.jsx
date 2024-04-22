@@ -13,7 +13,7 @@ function ScrollAnchor() {
     setTimeout(() => {
       document
         .getElementById(lastHash.current)
-        ?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+        ?.scrollIntoView({ behavior: 'smooth', block: 'center' })
       lastHash.current = ''
     }, 100)
   }, [location])

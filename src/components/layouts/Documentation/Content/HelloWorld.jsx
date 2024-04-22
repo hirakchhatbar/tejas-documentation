@@ -5,7 +5,7 @@ const HelloWorld = () => {
   return (
     <div className={'flex flex-row w-full gap-8'}>
       <Summary className={'w-[70%]'} />
-      <TableOfContent className={'w-[30%]'} />
+      <TableOfContent className={'w-[30%] sticky top-4'} />
     </div>
   )
 }
