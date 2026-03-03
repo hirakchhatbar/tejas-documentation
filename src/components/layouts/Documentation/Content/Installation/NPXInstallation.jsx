@@ -1,34 +1,37 @@
+import CodeBlock from '@/components/shared/CodeBlock.jsx'
+import { Card, CardContent } from '@/components/ui/card.jsx'
 import npxFlyTejas from '@/data/code-blocks/installation/npx-fly-tejas.jsx'
-import { Link } from 'react-router-dom'
-import { Card } from '@/components/ui/card.jsx'
+import { tejasTheme } from '@/lib/code-block-themes.js'
 
 const NPXInstallation = () => {
   return (
-    <div className={'flex flex-col gap-5'}>
-      <p>
-        Best and quickest way to start using te.js is by using our npx utility
+    <section id="quick-start" className="flex flex-col gap-5">
+      <h2 className="text-xl font-semibold tracking-tight">Quick Start (npx)</h2>
+      <p className="text-muted-foreground">
+        The fastest way to get a te.js project is with the scaffold tool. From an empty directory, run:
+      </p>
+
+      <CodeBlock
+        code="npx fly-tejas"
+        language="bash"
+        withCopy
+        theme={tejasTheme}
+      />
+
+      <p className="text-sm text-muted-foreground">
+        npx may prompt to install the package; type <code className="rounded bg-muted px-1.5 py-0.5">y</code> to proceed. The wizard will ask for project name, description, port (default 1403), and whether to log requests and exceptions. Example prompts:
       </p>
       {npxFlyTejas}
-      <p>
-        The command will ask some common questions to setup a new te.js project.
-        Once completed successfully, it will create a project whose folder
-        structure looks like this:
-      </p>
 
-        <img
-          className={'rounded-md border p-4'}
-          width={'40%'}
-          src={'/images/project-structure.png'}
-          alt={'Project Structure'}
-        />
-
-      <h3>
-        Congratulations! You&apos;re now ready to{' '}
-        <Link to={'/docs/hello-world'} className={'bold'}>
-          Get Started!
-        </Link>
-      </h3>
-    </div>
+      <Card className="border-sky-500/30 bg-sky-500/5">
+        <CardContent className="pt-6">
+          <p className="font-medium mb-1">What just happened</p>
+          <p className="text-sm text-muted-foreground">
+            The scaffold created a new folder with <code className="rounded bg-muted px-1.5 py-0.5">package.json</code>, <code className="rounded bg-muted px-1.5 py-0.5">tejas.config.json</code>, an entry file (e.g. <code className="rounded bg-muted px-1.5 py-0.5">app.js</code>), and installed te.js. You can change port and logging later in <code className="rounded bg-muted px-1.5 py-0.5">tejas.config.json</code> or via environment variables.
+          </p>
+        </CardContent>
+      </Card>
+    </section>
   )
 }
 

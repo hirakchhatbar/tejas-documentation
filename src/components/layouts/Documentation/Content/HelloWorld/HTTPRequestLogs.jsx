@@ -3,7 +3,7 @@ import RequestLogsSample from '@/components/shared/RequestLogsSample.jsx'
 const HTTPRequestLogs = () => {
   return (
     <div id={'http-requests-logs'} className={'flex flex-col gap-5'}>
-      <h3>HTTP Request Logs</h3>
+      <h2 className="text-xl font-semibold tracking-tight">HTTP Request Logs</h2>
       <p>If http_requests is set to true in configuration, te.js will log all
         the incoming HTTP requests in the console.</p>
 
@@ -29,7 +29,7 @@ const HTTPRequestLogs = () => {
       </div>
 
       <div className={'flex flex-col gap-2'}>
-        <span className={"text-muted"}>Example:</span>
+        <span className={"text-muted-foreground"}>Example:</span>
         <RequestLogsSample />
       </div>
     </div>

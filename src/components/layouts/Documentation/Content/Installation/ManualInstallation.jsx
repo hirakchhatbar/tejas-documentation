@@ -1,99 +1,76 @@
-import DocumentationAccordionItem
-  from '@/components/shared/Documentation/DocumentationAccordionItem.jsx'
-import DocumentationAccordionTrigger
-  from '@/components/shared/Documentation/DocumentationAccordionTrigger.jsx'
-import { Accordion } from '@/components/ui/accordion.jsx'
-import createProjectTermynal
-  from '@/data/code-blocks/installation/create-project-termynal.jsx'
-import installTejsTermynal
-  from '@/data/code-blocks/installation/install-tejs-termynal.jsx'
-import npmInit from '@/data/code-blocks/installation/npm-init-termynal.jsx'
-import { Link } from 'react-router-dom'
-
-const accordionItemValues = []
-
-const SetupDirectory = () => {
-
-  const trigger = <DocumentationAccordionTrigger
-    title={'1. Create a new folder'}
-    desc={'Skip if you already have a project folder'} />
-  const content = createProjectTermynal
-
-  return (
-    <DocumentationAccordionItem
-      triggerChildren={trigger}
-      contentChildren={content}
-      value={'createDir'}
-    />
-  )
-}
-const InitProject = () => {
-  const trigger = <DocumentationAccordionTrigger
-    title={'2. Initialize your project'}
-    desc={'Skip if you know how to generate a package.json'} />
-
-  const content = npmInit
-
-  return (
-    <DocumentationAccordionItem
-      triggerChildren={trigger}
-      contentChildren={content}
-      value={'initProject'}
-    />
-  )
-}
-const InstallTejas = () => {
-  const trigger = <DocumentationAccordionTrigger
-    title={'3. Install te.js'}
-  />
-
-  const content = installTejsTermynal
-
-  return (
-    <DocumentationAccordionItem
-      triggerChildren={trigger}
-      contentChildren={content}
-      value={'installTejas'}
-    />
-  )
-}
-
-const BuildHelloWorld = () => {
-  const trigger = (
-    <div className={'flex flex-col items-start text-start gap-2'}>
-      <h6>4. Build a Hello World App</h6>
-    </div>
-  )
-  const content = (
-    <h3>Congratulations, You&apos;re now ready to <Link to={'/docs/hello-world'}
-                                                        className={'bold'}>get
-      started!</Link></h3>
-
-  )
-
-  return (
-    <DocumentationAccordionItem
-      triggerChildren={trigger}
-      contentChildren={content}
-      value={'buildHelloWorld'}
-    />
-  )
-}
+import CodeBlock from '@/components/shared/CodeBlock.jsx'
+import { tejasTheme } from '@/lib/code-block-themes.js'
 
 const ManualInstallation = () => {
   return (
-    <div className={'flex flex-col w-full gap-6'}>
-      <Accordion
-        className={'flex-col grid gap-3'}
-        type={'multiple'}
-        defaultValue={accordionItemValues}
-      >
-        <SetupDirectory />
-        <InitProject />
-        <InstallTejas />
-        <BuildHelloWorld />
-      </Accordion>
-    </div>
+    <section id="manual-installation" className="flex flex-col gap-8">
+      <h2 className="text-xl font-semibold tracking-tight">Manual Installation</h2>
+      <p className="text-muted-foreground">
+        To add te.js to an existing Node project (or build one from scratch), follow these steps.
+      </p>
+
+      <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <h3 className="text-base font-medium">1. Create a directory</h3>
+          <p className="text-sm text-muted-foreground">
+            Create a folder for your app and move into it. Skip if you already have a project directory.
+          </p>
+          <CodeBlock
+            code={`mkdir my-app
+cd my-app`}
+            language="bash"
+            withCopy
+            theme={tejasTheme}
+          />
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="text-base font-medium">2. Initialize the project</h3>
+          <p className="text-sm text-muted-foreground">
+            Create a <code className="rounded bg-muted px-1.5 py-0.5">package.json</code> with defaults.
+          </p>
+          <CodeBlock
+            code="npm init -y"
+            language="bash"
+            withCopy
+            theme={tejasTheme}
+          />
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="text-base font-medium">3. Install te.js</h3>
+          <p className="text-sm text-muted-foreground">
+            Add the framework to your project.
+          </p>
+          <CodeBlock
+            code="npm install te.js"
+            language="bash"
+            withCopy
+            theme={tejasTheme}
+          />
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <h3 className="text-base font-medium">4. Enable ESM</h3>
+          <p className="text-sm text-muted-foreground">
+            te.js uses ES modules. Add <code className="rounded bg-muted px-1.5 py-0.5">&quot;type&quot;: &quot;module&quot;</code> to your <code className="rounded bg-muted px-1.5 py-0.5">package.json</code> so Node runs your files as ESM.
+          </p>
+          <CodeBlock
+            code={`{
+  "name": "my-app",
+  "type": "module",
+  ...
+}`}
+            language="json"
+            withCopy
+            theme={tejasTheme}
+          />
+          <p className="text-sm text-muted-foreground">
+            If you skip this step, you may see errors like <code className="rounded bg-muted px-1.5 py-0.5">Cannot use import statement outside a module</code>. See <a href="#troubleshooting" className="text-sky-600 dark:text-sky-400 hover:underline">Troubleshooting</a>.
+          </p>
+        </div>
+      </div>
+    </section>
   )
 }
 

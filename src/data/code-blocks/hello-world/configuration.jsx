@@ -1,23 +1,23 @@
 const configFileBasic = `{
-  port: 1403,
-  log: {
-    http_requests: true,
-    exceptions: true
+  "port": 1403,
+  "log": {
+    "http_requests": true,
+    "exceptions": true
   }
 }`
 
 const configFileFull = `{
-  port: 1403,
-  log: {
-    http_requests: true,
-    exceptions: true
+  "port": 1403,
+  "log": {
+    "http_requests": true,
+    "exceptions": true
   },
-  dir:{
-    targets: "targets"
+  "dir": {
+    "targets": "targets"
   },
-  db: {
-    type: "mongodb",
-    uri: "YOUR_MONGO_CONNECTION_STRING"
+  "db": {
+    "type": "mongodb",
+    "uri": "YOUR_MONGO_CONNECTION_STRING"
   }
 }`
 
@@ -34,13 +34,13 @@ DIR_TARGETS=targets
 DB_TYPE=mongodb
 DB_URI=YOUR_MONGO_CONNECTION_STRING`
 
-const configConstructorArguments = `import { Tejas } from 'te.js
+const configConstructorArguments = `import Tejas from 'te.js';
 
 const options = {
   // Configuration parameters
-}
+};
 
-const tejas = new Tejas(options);`
+const app = new Tejas(options);`
 
 export {
   configFileBasic,

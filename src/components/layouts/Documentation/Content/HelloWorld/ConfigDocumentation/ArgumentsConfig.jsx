@@ -10,7 +10,7 @@ const ArgumentsConfig = () => {
       <p>Tejas constructor accepts json object as it&apos;s parameter. You can
         pass configuration object as a constructor argument</p>
       <div className={'w-full flex flex-col gap-1'}>
-        <span className={"text-muted"}>constructor arguments</span>
+        <span className={"text-muted-foreground"}>constructor arguments</span>
         <CodeBlock
           withCopy={true}
           withLineNumbers={true}

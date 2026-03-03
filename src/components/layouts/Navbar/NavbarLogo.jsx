@@ -1,12 +1,13 @@
-export default function NavbarLogo() {
+import { Link } from 'react-router-dom'
 
+export default function NavbarLogo() {
   return (
-    <div>
+    <Link to="/" className="flex shrink-0" aria-label="Tejas home">
       <img
-        src={'/logotype.svg'}
-        className="navbar-logo"
-        alt="logo"
+        src="/logotype.svg"
+        className="h-8 w-20 object-contain"
+        alt="Tejas"
       />
-    </div>
+    </Link>
   )
 }

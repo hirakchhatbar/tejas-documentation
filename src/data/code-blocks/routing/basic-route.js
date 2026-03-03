@@ -1,4 +1,4 @@
-const basicRoute = `import { Tejas, Target } from 'tejas';
+const basicRoute = `import { Tejas, Target } from 'te.js';
 
 const target = new Target();
 target.register('/hello', (ammo) => {

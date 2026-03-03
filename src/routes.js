@@ -1,4 +1,4 @@
-import Documentation from '@/pages/Docuementation/Documentation.jsx'
+import Documentation from '@/pages/Documentation/Documentation.jsx'
 import Home from '@/pages/Home/Home.jsx'
 
 const routes = [

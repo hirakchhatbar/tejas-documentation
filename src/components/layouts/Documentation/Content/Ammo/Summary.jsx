@@ -8,11 +8,11 @@ const Summary = ({ className }) => {
   return (
     <div className={cn('flex flex-col gap-10', className)}>
       <div id={'ammo'} className={cn('flex flex-col gap-5')}>
-        <Card className={'p-4 border-error'}>
-          <h5>
-            Ammo is a powerful Object that wraps http.IncomingMessage and
-            http.ServerResponse objects from Node.js.
-          </h5>
+        <Card className="p-4 border-sky-500/30">
+          <p className="font-medium">
+            Ammo is a powerful object that wraps http.IncomingMessage and
+            http.ServerResponse from Node.js.
+          </p>
         </Card>
         <p> It provides a simpler and easier way to handle requests and
           responses.</p>

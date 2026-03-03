@@ -1,7 +1,7 @@
 const createEndpoint = `import { Target } from 'te.js';
 const target = new Target();
 
-// This registers a route at "/hello and "/another-hello" that you can send requests to.
+// This registers a route at "/hello" and "/another-hello" that you can send requests to.
 target.register("/hello", (ammo) => {
   // Your code here
 });

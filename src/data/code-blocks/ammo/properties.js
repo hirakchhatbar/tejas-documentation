@@ -6,14 +6,14 @@ const reqAndRes = `target.register("/", (ammo) => {
   // These can be used to implement custom logic as needed. For eg:
   req.on('data', (chunk) => {
     console.log(chunk);
-  }
+  });
   
-  const contentTypeHeader = { 'Content-Type': contentType };
+  const contentTypeHeader = { 'Content-Type': 'application/json' };
   const statusCode = 200;
   res.writeHead(statusCode, contentTypeHeader);
   res.write(JSON.stringify({ message: 'Hello, World!' }));
   res.end();
-)`
+});`
 
 const headers = `target.register("/", (ammo) => {
   // To access the headers of the incoming request

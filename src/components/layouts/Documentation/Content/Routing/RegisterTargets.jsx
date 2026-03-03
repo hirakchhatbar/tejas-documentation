@@ -4,7 +4,7 @@ import {
   TabsList,
   TabsTrigger
 } from '@/components/ui/tabs.jsx'
-import documentationStore from '@/pages/Docuementation/DocumentationStore.jsx'
+import documentationStore from '@/pages/Documentation/DocumentationStore.jsx'
 import AutoRegister from '@/components/layouts/Documentation/Content/Routing/RegisterTargets/AutoRegister.jsx'
 import ManualRegister from '@/components/layouts/Documentation/Content/Routing/RegisterTargets/ManualRegister.jsx'
 
@@ -18,7 +18,7 @@ const RegisterTargets = () => {
 
   return (
     <div id={'register-targets'} className={'flex flex-col gap-5'}>
-      <h3>Register Targets</h3>
+      <h2 className="text-xl font-semibold tracking-tight">Register Targets</h2>
       <p>
         There are 2 ways to register targets in te.js, Automatic and Manual. Of
         course, we recommend automatic method to ensure code quality and cleaner

@@ -12,7 +12,7 @@ const TejasConfigJson = () => {
         Copy-paste content of the file from here.</p>
 
       <div className={'flex flex-col gap-1'}>
-        <span className={"text-muted"}>tejas.config.json</span>
+        <span className={"text-muted-foreground"}>tejas.config.json</span>
         <CodeBlock
           withCopy={true}
           withLineNumbers={true}

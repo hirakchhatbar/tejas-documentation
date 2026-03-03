@@ -3,7 +3,7 @@ import data
   from '@/data/web-content/documentation/table-of-content/hello-world.js'
 import { cn } from '@/lib/utils.js'
 import { Link } from 'react-router-dom'
-import documentationStore from '@/pages/Docuementation/DocumentationStore.jsx'
+import documentationStore from '@/pages/Documentation/DocumentationStore.jsx'
 
 const PrimaryMenu = ({ text, link }) => {
   return (
@@ -35,7 +35,7 @@ const TableOfContent = ({ className }) => {
         className
       )}>
 
-      <CardHeader><h5>Advanced Topics</h5></CardHeader>
+      <CardHeader><span className="font-semibold">Advanced Topics</span></CardHeader>
       <CardContent className={"flex flex-col gap-5"}>
         {data.map((item, index) => {
           return (

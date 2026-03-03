@@ -1,10 +1,13 @@
 import { create } from 'zustand'
+import sidebarMenu from '@/data/web-content/documentation/sidebar-menu.js'
 
 const availableConfigOptions = ['tejas.config.json', 'env', 'arguments']
 const availableRegisterTargetOptions = ['auto-register', 'manual-register']
 
-const docStore = create((set, get) => ({
-  selectedMenu: '/docs/installation',
+const installationMenu = sidebarMenu.find((item) => item.path === '/docs/installation') ?? sidebarMenu[0]
+
+const docStore = create((set) => ({
+  selectedMenu: installationMenu,
   setSelectedMenu: (selected) => set({ selectedMenu: selected }),
 
   selectedConfigOption: 'tejas.config.json',

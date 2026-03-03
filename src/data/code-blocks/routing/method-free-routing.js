@@ -5,12 +5,12 @@ target.register('/', (ammo) => {
 
   if (ammo.GET) {
     // Your logic here
-    return ammo.fire(data);
+    return ammo.fire({ users });
   }
   
   if (ammo.POST) {
     // Your logic here
-    return ammo.fire(data);
+    return ammo.fire('Created');
   }
   
   // For any other methods:

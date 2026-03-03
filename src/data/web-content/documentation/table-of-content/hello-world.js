@@ -1,28 +1,11 @@
 const data = [
   {
-    title: 'Configuration',
-    link: '#configuration',
+    title: 'Build your first app',
+    link: '#build-your-first-app',
     subItems: [
-      {
-        title: 'Available Parameters',
-        value: 'available-options',
-        link: '#available-options'
-      },
-      {
-        title: 'Using tejas.config.json',
-        value: 'tejas.config.json',
-        link: '#tejas.config.json'
-      },
-      {
-        title: 'Using .env file',
-        value: 'env',
-        link: '#env'
-      },
-      {
-        title: 'Using Tejas constructor',
-        value: 'arguments',
-        link: '#arguments'
-      }
+      { title: '1. Create tejas.config.json', link: '#create-config' },
+      { title: '2. Create app.js', link: '#create-app-js' },
+      { title: '3. Run the app', link: '#run-the-app' }
     ]
   },
   {

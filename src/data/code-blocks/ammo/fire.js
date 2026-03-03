@@ -1,6 +1,6 @@
 const fireTextOnly = `target.register("/", (ammo) => {
   
-  // Send a text" as response with default status code 200
+  // Send a text as response with default status code 200
   
   const text = "Hello World!"; // or any other string
   ammo.fire(text);

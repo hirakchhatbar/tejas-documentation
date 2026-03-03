@@ -1,6 +1,6 @@
-const appJs = `import { Tejas } from 'tejas'
-const tejas = new Tejas();
+const appJs = `import Tejas from 'te.js';
 
-tejas.takeOff();`;
+const app = new Tejas();
+app.takeoff();`;
 
 export default appJs;

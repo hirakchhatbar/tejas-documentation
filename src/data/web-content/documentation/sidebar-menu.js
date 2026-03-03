@@ -1,58 +1,127 @@
-import Installation from '@/components/layouts/Documentation/Content/Installation.jsx'
-import {
-  CircleDotIcon,
-  CrosshairIcon,
-  DownloadIcon,
-  FilesIcon,
-  HandIcon,
-  RouteIcon,
-  SplitIcon,
-  SquareTerminalIcon
-} from 'lucide-react'
-import HelloWorld from '@/components/layouts/Documentation/Content/HelloWorld.jsx'
-import Routing from '@/components/layouts/Documentation/Content/Routing.jsx'
-import Ammo from '@/components/layouts/Documentation/Content/Ammo.jsx'
-
-const sidebarMenu = [
+/** Section groups for the docs sidebar. Items use componentKey to resolve the page component elsewhere. */
+export const sidebarGroups = [
   {
-    Icon: DownloadIcon,
-    Component: Installation,
-    title: 'Installation',
-    path: '/docs/installation'
+    label: 'Getting Started',
+    items: [
+      {
+        componentKey: 'installation',
+        title: 'Installation',
+        path: '/docs/installation',
+        tocKey: 'installation'
+      },
+      {
+        componentKey: 'hello-world',
+        title: 'Hello, World!',
+        path: '/docs/hello-world',
+        tocKey: 'hello-world'
+      },
+      {
+        componentKey: 'configuration',
+        title: 'Configuration',
+        path: '/docs/configuration',
+        tocKey: 'configuration'
+      }
+    ]
   },
   {
-    Icon: HandIcon,
-    Component: HelloWorld,
-    title: 'Hello, World!',
-    path: '/docs/hello-world'
+    label: 'Core Concepts',
+    items: [
+      {
+        componentKey: 'routing',
+        title: 'Routing (Targets)',
+        path: '/docs/routing',
+        tocKey: 'routing'
+      },
+      {
+        componentKey: 'ammo',
+        title: 'Ammo',
+        path: '/docs/ammo',
+        tocKey: 'ammo'
+      },
+      {
+        componentKey: 'middleware',
+        title: 'Middlewares',
+        path: '/docs/middlewares',
+        tocKey: 'middleware'
+      },
+      {
+        componentKey: 'error-handling',
+        title: 'Error Handling',
+        path: '/docs/error-handling',
+        tocKey: 'error-handling'
+      }
+    ]
   },
   {
-    Icon: RouteIcon,
-    Component: Routing,
-    title: 'Routing (Targets)',
-    path: '/docs/routing'
+    label: 'More',
+    items: [
+      {
+        componentKey: 'database',
+        title: 'Database',
+        path: '/docs/database',
+        tocKey: 'database'
+      },
+      {
+        componentKey: 'file-uploads',
+        title: 'File Uploader',
+        path: '/docs/file-uploader',
+        tocKey: 'file-uploads'
+      },
+      {
+        componentKey: 'rate-limiting',
+        title: 'Rate Limiting',
+        path: '/docs/rate-limiting',
+        tocKey: 'rate-limiting'
+      },
+      {
+        componentKey: 'cli',
+        title: 'CLI',
+        path: '/docs/cli',
+        tocKey: 'cli'
+      },
+      {
+        componentKey: 'api-reference',
+        title: 'API Reference',
+        path: '/docs/api-reference',
+        tocKey: 'api-reference'
+      },
+      { title: 'Logger', path: '/docs/logger', comingSoon: true }
+    ]
   },
   {
-    Icon: CircleDotIcon,
-    Component: Ammo,
-    title: 'Ammo',
-    path: '/docs/ammo'
-  },
-  {
-    Icon: SplitIcon,
-    title: 'Middlewares',
-    path: '/docs/middlewares'
-  },
-  {
-    Icon: FilesIcon,
-    title: 'File Uploader',
-    path: '/docs/file-uploader'
-  },
-  {
-    Icon: SquareTerminalIcon,
-    title: 'Logger',
-    path: '/docs/logger'
+    label: 'AI Native',
+    items: [
+      {
+        componentKey: 'auto-docs',
+        title: 'Auto-Documentation',
+        path: '/docs/auto-docs',
+        tocKey: 'auto-docs'
+      },
+      { title: 'AI Test Generation', path: '/docs/ai-test-generation', comingSoon: true }
+    ]
   }
 ]
 
-export default sidebarMenu
+/** Flat list of all doc pages (for routing and prev/next). */
+const flatItems = sidebarGroups.flatMap((g) => g.items)
+
+/** Find menu item by path. */
+export function getMenuItemByPath(path) {
+  return flatItems.find((item) => item.path === path) ?? flatItems[0]
+}
+
+/** Get prev/next menu items (only pages with componentKey, excluding comingSoon). */
+export function getPrevNext(path) {
+  const withComponent = flatItems.filter(
+    (item) => item.componentKey && !item.comingSoon
+  )
+  const idx = withComponent.findIndex((item) => item.path === path)
+  if (idx < 0) return { prev: null, next: null }
+  return {
+    prev: idx > 0 ? withComponent[idx - 1] : null,
+    next: idx < withComponent.length - 1 && idx >= 0 ? withComponent[idx + 1] : null
+  }
+}
+
+/** Flat array for path matching and store (DocumentationStore). */
+export default flatItems

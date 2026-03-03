@@ -2,6 +2,7 @@ import ScrollAnchor from '@/components/shared/ScrollAnchor.jsx'
 import Footer from '@/pages/Footer/Footer.jsx'
 import Navbar from '@/pages/Navbar/Navbar.jsx'
 import routes from '@/routes.js'
+import { TooltipProvider } from '@/components/ui/tooltip.jsx'
 import { useMemo } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './assets/index.css'
@@ -17,17 +18,16 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ScrollAnchor />
-      <div className={'flex flex-col w-full h-full'}>
-        <Navbar />
-        <div
-          className={'flex w-full place-content-center items-center p-8'}>
-          <Routes>
-            {useRoutes}
-          </Routes>
+      <TooltipProvider>
+        <ScrollAnchor />
+        <div className="flex flex-col min-h-screen w-full">
+          <Navbar />
+          <main className="flex-1">
+            <Routes>{useRoutes}</Routes>
+          </main>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </TooltipProvider>
     </BrowserRouter>
   )
 }

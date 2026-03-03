@@ -1,3 +1,4 @@
+/* eslint-env node */
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -17,7 +18,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ["Noto Sans", "sans-serif"],
+      sans: ["Inter", "sans-serif"],
+      display: ["Sora", "sans-serif"],
     },
     extend: {
       gridTemplateColumns: {
@@ -26,38 +28,43 @@ module.exports = {
       colors: {
         transparent: "transparent",
         accent: {
-          DEFAULT: "var(--accent)",
-          muted: "var(--accent-muted)",
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
         },
         background: {
-          DEFAULT: "var(--background)",
-          secondary: "var(--background-secondary)",
+          DEFAULT: "hsl(var(--background))",
         },
         primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         card: {
-          DEFAULT: "var(--card)",
-          alert: "var(--card-alert)",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
         border: {
-          DEFAULT: "var(--border)",
-          muted: "var(--border-muted)",
+          DEFAULT: "hsl(var(--border))",
         },
-        dracula: {
-          DEFAULT: "var(--dracula)",
-          bg: "var(--dracula-bg)",
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
-        heading: "var(--text-heading)",
-        body: "var(--text-body)",
-        muted: "var(--text-muted)",
-        success: "var(--success)",
-        error: "var(--error)",
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        destructive: "hsl(var(--destructive))",
+        "destructive-foreground": "hsl(var(--destructive-foreground))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        success: "hsl(var(--success))",
+        error: "hsl(var(--error))",
+        heading: "hsl(var(--foreground))",
+        body: "hsl(var(--foreground))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -73,10 +80,27 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-in": {
+          from: { opacity: "0", transform: "translateY(8px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in-up": {
+          from: { opacity: "0", transform: "translateY(12px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-in": "fade-in 0.5s ease-out forwards",
+        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+      },
+      animationDelay: {
+        100: "100ms",
+        200: "200ms",
+        300: "300ms",
+        400: "400ms",
+        500: "500ms",
       },
     },
   },

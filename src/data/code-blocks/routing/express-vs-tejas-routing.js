@@ -1,4 +1,4 @@
-const expressRouting = `import express from ('express');
+const expressRouting = `import express from 'express';
 import userRouter from './routes/user';
 
 const app = express();
@@ -7,7 +7,7 @@ const app = express();
 app.use('/user', userRouter);
 // other code`
 
-const expressRouteFile = `import express from ('express');
+const expressRouteFile = `import express from 'express';
 const router = express.Router();
 
 // Your endpoints here

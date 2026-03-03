@@ -39,7 +39,7 @@ const EnvConfig = () => {
 
       </div>
       <div className={'flex flex-col gap-1'}>
-        <span className={"text-muted"}>.env</span>
+        <span className={"text-muted-foreground"}>.env</span>
         <CodeBlock
           withCopy={true}
           withLineNumbers={false}

@@ -101,6 +101,21 @@ const data = [
             title: 'notAllowed()',
             value: 'not-allowed',
             link: '#not-allowed'
+          },
+          {
+            title: 'throw()',
+            value: 'throw',
+            link: '#throw'
+          },
+          {
+            title: 'redirect()',
+            value: 'redirect',
+            link: '#redirect'
+          },
+          {
+            title: 'defaultEntry()',
+            value: 'default-entry',
+            link: '#default-entry'
           }
         ]
       }
