@@ -68,10 +68,10 @@ const TableOfContentsRail = ({ items }) => {
               key={item.link}
               style={{ paddingLeft: depth * 12 }}
               className={cn(
-                'border-l-2 transition-colors',
+                'transition-colors',
                 isActive
-                  ? 'border-sky-500 text-foreground'
-                  : 'border-transparent text-muted-foreground hover:text-foreground'
+                  ? 'text-foreground'
+                  : 'text-muted-foreground hover:text-foreground'
               )}
             >
               <a

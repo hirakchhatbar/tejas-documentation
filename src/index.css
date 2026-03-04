@@ -138,4 +138,42 @@
   .termynal-inline:after {
     display: none;
   }
+
+  /* Scroll-in animations: use with useInView; add .in-view to trigger */
+  .scroll-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  .scroll-in-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered children: use .bento-card + transition-delay on each child */
+  .scroll-in-up .bento-card {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  .scroll-in-up.in-view .bento-card {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Glow effects for hero / CTAs */
+  .glow-sky {
+    box-shadow: 0 0 40px hsl(199 89% 48% / 0.15);
+  }
+  .glow-sky-strong {
+    box-shadow: 0 0 60px hsl(199 89% 48% / 0.25);
+  }
+  .border-gradient-sky {
+    border: 1px solid transparent;
+    background: linear-gradient(hsl(var(--card)), hsl(var(--card))) padding-box,
+      linear-gradient(135deg, hsl(199 89% 48% / 0.4), hsl(187 85% 53% / 0.3), hsl(199 89% 48% / 0.2)) border-box;
+  }
+  .hover-glow-sky:hover {
+    box-shadow: 0 0 24px hsl(199 89% 48% / 0.2);
+  }
 }
