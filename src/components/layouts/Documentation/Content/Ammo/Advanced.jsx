@@ -6,7 +6,7 @@ import {
   reqAndRes
 } from '@/data/code-blocks/ammo/properties.js'
 import { tejasTheme } from '@/lib/code-block-themes.js'
-import { notAllowed, notFound, unauthorized } from '@/data/code-blocks/ammo/functions.js'
+import { notAllowed, notFound, only, unauthorized } from '@/data/code-blocks/ammo/functions.js'
 import { ammoThrow, ammoRedirect, ammoDefaultEntry } from '@/data/code-blocks/ammo/response-methods.js'
 
 const Advanced = () => {
@@ -93,8 +93,25 @@ const Advanced = () => {
             />
           </div>
 
+          <div id={'only'} className={'flex flex-col gap-1'}>
+            <span className={'text-muted-foreground'}>only(methods)</span>
+            <p className={'text-sm text-muted-foreground'}>
+              Restrict the handler to specific HTTP methods. If the request method is not in the list, sets the <code>Allow</code> header and throws 405. Call at the start of the handler (e.g. <code>ammo.only('GET')</code>).
+            </p>
+            <CodeBlock
+              code={only}
+              language={'javascript'}
+              withLineNumbers={true}
+              withCopy={true}
+              theme={tejasTheme}
+            />
+          </div>
+
           <div id={'not-allowed'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>Not Allowed</span>
+            <p className={'text-sm text-muted-foreground'}>
+              Throws 405 Method Not Allowed. Pass allowed methods to set the <code>Allow</code> header (e.g. <code>ammo.notAllowed('GET', 'POST')</code>).
+            </p>
             <CodeBlock
               code={notAllowed}
               language={'javascript'}
@@ -107,7 +124,7 @@ const Advanced = () => {
           <div id={'throw'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>throw()</span>
             <p className={'text-sm text-muted-foreground'}>
-              Send error responses with a status code, custom message, or from an Error object. Use for intentional error conditions.
+              Send error responses with a status code, custom message, or from an Error object. When <code>errors.llm.enabled</code>, call <code>ammo.throw()</code> with <strong>no arguments</strong> and an LLM infers status and message from the code surrounding the call (with line numbers) and upstream/downstream context — no error object required. Optional per-call options: <code>{'{ useLlm, messageType }'}</code>. See Error Handling.
             </p>
             <CodeBlock
               code={ammoThrow}

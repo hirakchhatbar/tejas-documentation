@@ -1,5 +1,6 @@
 const data = [
   { title: 'Available configuration options', link: '#available-options' },
+  { title: 'Errors object (errors.llm)', link: '#errors-object' },
   {
     title: 'Ways to configure',
     link: '#ways-to-configure',

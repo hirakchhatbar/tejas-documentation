@@ -30,12 +30,30 @@ const configOptions = [
     )
   },
   {
+    key: 'allowedMethods',
+    type: 'array (or env: ALLOWEDMETHODS)',
+    default: 'GET, POST, PUT, DELETE, PATCH, HEAD, OPTIONS',
+    description: 'HTTP methods allowed at the framework level. Non-standard methods (e.g. TRACE, CONNECT) are rejected with 405 before route matching. Set in tejas.config.json as an array (e.g. ["GET","POST"]) or via env as a comma-separated string.'
+  },
+  {
     key: 'db.type',
     description: 'Database type. Currently supported: "mongodb". More will be added and documented.'
   },
   {
     key: 'db.uri',
     description: 'Connection URI for the database (e.g. "mongodb://localhost:27017"). Get this from your database provider.'
+  },
+  {
+    key: 'errors.llm',
+    description: (
+      <>
+        LLM-inferred error codes and messages. When <code className="rounded bg-muted px-1.5 py-0.5">errors.llm.enabled</code> is true, <code className="rounded bg-muted px-1.5 py-0.5">ammo.throw()</code> (and framework-caught errors) use an LLM to infer status and message from code context. See{' '}
+        <a href="#errors-object" className="text-sky-600 dark:text-sky-400 hover:underline">
+          Errors object (errors.llm)
+        </a>
+        {' '}for all parameters (enabled, baseURL, apiKey, model, messageType) and env vars.
+      </>
+    )
   }
 ]
 

@@ -17,6 +17,20 @@ const api = new Target('/api');`
 
 const targetRegister = `api.register('/users', (ammo) => {
   ammo.fire({ users: [] });
+});
+
+// With allowed methods (405 + Allow for others)
+api.register('/users', { methods: ['GET', 'POST'] }, (ammo) => {
+  if (ammo.GET) return ammo.fire(userService.list());
+  if (ammo.POST) return ammo.fire(201, userService.create(ammo.payload));
 });`
 
-export { tejasConstructor, tejasMidair, tejasTakeoff, targetConstructor, targetRegister }
+const tejasWithCORS = `app.withCORS({
+  origin: ['https://example.com'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  maxAge: 86400
+});`
+
+export { tejasConstructor, tejasMidair, tejasTakeoff, targetConstructor, targetRegister, tejasWithCORS }

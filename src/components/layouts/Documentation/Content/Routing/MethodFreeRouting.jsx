@@ -14,7 +14,7 @@ const MethodFreeRouting = () => {
       </p>
       <Card className="p-4 border-sky-500/30">
         <p>
-          Supported methods: GET, POST, PUT, DELETE, PATCH, and OPTIONS
+          Supported methods: GET, POST, PUT, DELETE, PATCH, HEAD, and OPTIONS. Non-standard methods (e.g. TRACE) are rejected with 405 before matching. You can restrict methods per route with <code>{'register(path, { methods: [\'GET\', \'POST\'] }, handler)'}</code> or inline with <code>ammo.only(\'GET\')</code>; HEAD is allowed automatically when GET is allowed.
         </p>
       </Card>
       <CodeBlock

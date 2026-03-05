@@ -35,6 +35,23 @@ const data = [
     title: 'Method Free Routing',
     link: '#method-free-routing',
     value: 'method-free-routing'
+  },
+  {
+    title: 'Restricting HTTP methods',
+    link: '#method-restriction',
+    value: 'method-restriction',
+    subItems: [
+      {
+        title: 'Declarative methods',
+        value: 'declarative-methods',
+        link: '#declarative-methods'
+      },
+      {
+        title: 'Inline: ammo.only()',
+        value: 'inline-only',
+        link: '#inline-only'
+      }
+    ]
   }
 ]
 

@@ -98,6 +98,11 @@ const data = [
             link: '#not-found'
           },
           {
+            title: 'only(methods)',
+            value: 'only',
+            link: '#only'
+          },
+          {
             title: 'notAllowed()',
             value: 'not-allowed',
             link: '#not-allowed'

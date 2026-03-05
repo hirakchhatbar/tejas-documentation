@@ -2,6 +2,7 @@ import ArgumentsConfig from '@/components/layouts/Documentation/Content/HelloWor
 import ConfigVariables from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/ConfigVariables.jsx'
 import EnvConfig from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/EnvConfig.jsx'
 import TejasConfigJson from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/TejasConfigJson.jsx'
+import ErrorsConfigSection from '@/components/layouts/Documentation/Content/HelloWorld/ConfigDocumentation/ErrorsConfigSection.jsx'
 import {
   Tabs,
   TabsContent,
@@ -25,6 +26,10 @@ const Configuration = () => {
         <h2 className="text-xl font-semibold tracking-tight">Available configuration options</h2>
         <ConfigVariables />
       </section>
+
+      <Separator orientation="horizontal" />
+
+      <ErrorsConfigSection />
 
       <Separator orientation="horizontal" />
 

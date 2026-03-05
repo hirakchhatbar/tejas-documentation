@@ -13,8 +13,8 @@ target.register('/', (ammo) => {
     return ammo.fire('Created');
   }
   
-  // For any other methods:
-  return ammo.notAllowed();
+  // For any other methods (sets Allow header):
+  return ammo.notAllowed('GET', 'POST');
 });`
 
 export default methodFreeRouting

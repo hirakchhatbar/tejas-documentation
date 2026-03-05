@@ -92,6 +92,12 @@ export const sidebarGroups = [
     label: 'AI Native',
     items: [
       {
+        componentKey: 'llm-error-handling',
+        title: 'LLM Error Handling',
+        path: '/docs/llm-error-handling',
+        tocKey: 'llm-error-handling'
+      },
+      {
         componentKey: 'auto-docs',
         title: 'Auto-Documentation',
         path: '/docs/auto-docs',

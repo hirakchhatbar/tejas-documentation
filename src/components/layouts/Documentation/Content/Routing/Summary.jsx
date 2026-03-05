@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import RegisterTargets from '@/components/layouts/Documentation/Content/Routing/RegisterTargets.jsx'
 import Endpoints from '@/components/layouts/Documentation/Content/Routing/Endpoints.jsx'
 import MethodFreeRouting from '@/components/layouts/Documentation/Content/Routing/MethodFreeRouting.jsx'
+import MethodRestriction from '@/components/layouts/Documentation/Content/Routing/MethodRestriction.jsx'
 
 const Summary = ({ className }) => {
   return (
@@ -35,6 +36,8 @@ const Summary = ({ className }) => {
       <Endpoints />
       <Separator orientation={'horizontal'} />
       <MethodFreeRouting />
+      <Separator orientation={'horizontal'} />
+      <MethodRestriction />
     </div>
   )
 }

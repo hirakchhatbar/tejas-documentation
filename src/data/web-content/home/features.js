@@ -1,75 +1,62 @@
 import {
-  ActivityIcon, BotIcon, BugIcon,
-  DatabaseZapIcon, LayoutDashboardIcon,
+  BotIcon,
+  DatabaseIcon,
+  FileCodeIcon,
   RouteIcon,
   ShieldCheckIcon,
-  SirenIcon, SplitIcon,
   ZapIcon
 } from 'lucide-react'
 
+/**
+ * Bento grid: 6 features in a 4-column layout.
+ * Row 1: 1 wide (col-span-2) + 2 small.
+ * Row 2: 2 small + 1 wide (col-span-2).
+ * AI-native features are prioritised.
+ */
 const features = [
   {
     Icon: ZapIcon,
-    title: 'Never Crashes',
+    title: 'Zero-Config Error Handling',
     description:
-      'Forgot try-catch blocks? No worries, te.js application will never crash and will always return a response.',
-    size: 'large'
-  },
-  {
-    Icon: RouteIcon,
-    title: 'Method-free Routing',
-    description:
-      'Offers a powerful and flexible routing system that enables method-free and clean URL structures.',
-    size: 'large'
-  },
-  {
-    Icon: SplitIcon,
-    title: 'Express Middlewares',
-    description:
-      'Fully compatible with Express middlewares, as well as the ability to build te.js middlewares.'
-  },
-  {
-    Icon: BugIcon,
-    title: 'Built-in Logger',
-    description:
-      'Built-in logger to log all the requests, responses, and errors to help you debug your application.'
-  },
-  {
-    Icon: LayoutDashboardIcon,
-    title: 'GUI',
-    description:
-      'Built-in GUI to manage your application, environment variables, view logs and run schedulers.'
+      'ammo.throw() sends the response — no separate log-and-send. Optional LLM infers status and message from code context.',
+    span: 2,
+    accent: 'amber'
   },
   {
     Icon: BotIcon,
     title: 'AI-Native (MCP)',
     description:
-      'Ship with an MCP server so AI assistants like Cursor and Claude can scaffold projects, generate routes, and write correct te.js code with full framework knowledge.',
-    size: 'large'
-  },
-  {
-    Icon: ActivityIcon,
-    title: 'Built-in Monitoring',
-    description:
-      'Real-time insights into the performance, health, and usage of your application with built-in monitoring.'
-  },
-  {
-    Icon: SirenIcon,
-    title: 'Alerts & Notifications',
-    description:
-      'Built-in alerts via Email, SMS, or Slack to notify you of any exceptions and malformed requests.'
-  },
-  {
-    Icon: DatabaseZapIcon,
-    title: 'Customizable Caching',
-    description:
-      'Highly configurable caching options to cache responses at different levels to improve performance.'
+      'Ships with an MCP server so AI assistants like Cursor and Claude can scaffold projects, generate routes, and write correct te.js code with full framework knowledge.',
+    accent: 'sky'
   },
   {
     Icon: ShieldCheckIcon,
-    title: 'API Rate Limiting',
+    title: 'Built-in Rate Limiting',
     description:
-      'Protect your API from abuse and control the rate of requests that clients can make to your API.'
+      'Token Bucket, Sliding Window, and Fixed Window algorithms with memory or Redis storage. Protect your API out of the box.',
+    accent: 'rose'
+  },
+  {
+    Icon: RouteIcon,
+    title: 'Simple Routing',
+    description:
+      'Clean, method-agnostic URL structures with parameterized routes for expressive and flexible APIs.',
+    accent: 'emerald'
+  },
+  {
+    Icon: DatabaseIcon,
+    title: 'Built-in Database',
+    description:
+      'Redis and MongoDB out of the box with app.withRedis() and app.withMongo(). Drivers auto-install on first use.',
+    accent: 'sky'
+  },
+  {
+    Icon: FileCodeIcon,
+    title: 'Auto-Documentation',
+    description:
+      'Generate OpenAPI specs from your code with LLM-powered analysis via tejas generate:docs.',
+    span: 2,
+    accent: 'violet'
   }
 ]
 

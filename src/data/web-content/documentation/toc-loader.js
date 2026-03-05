@@ -3,6 +3,7 @@ import configurationToc from '@/data/web-content/documentation/table-of-content/
 import helloWorldToc from '@/data/web-content/documentation/table-of-content/hello-world.js'
 import installationToc from '@/data/web-content/documentation/table-of-content/installation.js'
 import apiReferenceToc from '@/data/web-content/documentation/table-of-content/api-reference.js'
+import llmErrorHandlingToc from '@/data/web-content/documentation/table-of-content/llm-error-handling.js'
 import autoDocsToc from '@/data/web-content/documentation/table-of-content/auto-docs.js'
 import cliToc from '@/data/web-content/documentation/table-of-content/cli.js'
 import databaseToc from '@/data/web-content/documentation/table-of-content/database.js'
@@ -25,6 +26,7 @@ const tocByKey = {
   'rate-limiting': rateLimitingToc,
   cli: cliToc,
   'api-reference': apiReferenceToc,
+  'llm-error-handling': llmErrorHandlingToc,
   'auto-docs': autoDocsToc
 }
 

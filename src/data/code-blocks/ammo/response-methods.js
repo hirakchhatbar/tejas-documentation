@@ -1,18 +1,22 @@
 const ammoThrow = `target.register("/users/:id", (ammo) => {
   const user = findUser(ammo.payload.id);
 
-  // No arguments: 500 Internal Server Error
+  // No arguments: LLM infers from code context when errors.llm.enabled (no error object required)
   if (!user) return ammo.throw();
 
-  // Status code with custom message
+  // Explicit: status code and message (always override)
   if (!user.isActive) return ammo.throw(403, "Account disabled");
 
-  // From Error object (Tejas converts to HTTP response)
+  // Optional: pass caught error; LLM uses error stack for code context
   try {
     validate(user);
   } catch (err) {
     return ammo.throw(err);
   }
+
+  // Per-call options: skip LLM or override message type
+  // ammo.throw({ useLlm: false });
+  // ammo.throw({ messageType: 'developer' });
 
   ammo.fire(user);
 })`

@@ -16,8 +16,8 @@ const Endpoints = () => {
       <div id={'create-endpoint'} className={'flex flex-col gap-2'}>
         <h3 className="text-base font-medium">Create an endpoint</h3>
         <p>
-          To create an endpoint, you use target.register, specifying the
-          endpoint path and a handler function that receives the ammo object.
+          To create an endpoint, you use <code className="rounded bg-muted px-1.5 py-0.5">target.register</code>, specifying the
+          endpoint path and a handler function that receives the ammo object. You can optionally pass a metadata object as the second argument (e.g. <code className="rounded bg-muted px-1.5 py-0.5">{'{ methods: [\'GET\', \'POST\'] }'}</code>) to restrict allowed HTTP methods; see <a href="#method-restriction" className="text-sky-600 dark:text-sky-400 hover:underline">Restricting HTTP methods</a>.
         </p>
         <CodeBlock
           code={createEndpoint}

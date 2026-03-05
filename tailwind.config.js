@@ -92,6 +92,78 @@ module.exports = {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.7" },
         },
+        "pulse-slow": {
+          "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
+          "50%": { opacity: "0.9", transform: "scale(1.05)" },
+        },
+        "float-node": {
+          "0%, 100%": { transform: "translate(0, 0) scale(1)", opacity: "0.85" },
+          "33%": { transform: "translate(2px, -3px) scale(1.1)", opacity: "1" },
+          "66%": { transform: "translate(-1px, 2px) scale(0.95)", opacity: "0.9" },
+        },
+        "line-pulse": {
+          "0%, 100%": { opacity: "0.25" },
+          "50%": { opacity: "0.5" },
+        },
+        "error-caught": {
+          "0%": { opacity: "0.9", transform: "scale(1) translate(0, 0)" },
+          "50%": { opacity: "0.5", transform: "scale(0.7) translate(2px, 2px)" },
+          "100%": { opacity: "0.9", transform: "scale(1) translate(0, 0)" },
+        },
+        "flow-line-opacity": {
+          "0%, 100%": { opacity: "0.5" },
+          "50%": { opacity: "0.85" },
+        },
+        "flow-dash": {
+          "0%": { strokeDashoffset: "0" },
+          "100%": { strokeDashoffset: "-100" },
+        },
+        "flow-blip": {
+          "0%, 100%": { opacity: "0.6", transform: "translate(-50%, -50%) scale(0.85)" },
+          "50%": { opacity: "1", transform: "translate(-50%, -50%) scale(1.15)" },
+        },
+        "error-absorbed": {
+          "0%": { opacity: "0.9", transform: "translate(-50%, -50%) translateX(4.375rem) scale(1)" },
+          "70%": { opacity: "0.4", transform: "translate(-50%, -50%) translateX(0.5rem) scale(0.5)" },
+          "100%": { opacity: "0", transform: "translate(-50%, -50%) translateX(0) scale(0.2)" },
+        },
+        "server-pulse": {
+          "0%, 100%": { opacity: "0.9", transform: "translate(-50%, -50%) scale(1)" },
+          "50%": { opacity: "1", transform: "translate(-50%, -50%) scale(1.08)" },
+        },
+        "route-param": {
+          "0%, 100%": { opacity: "0.6" },
+          "50%": { opacity: "1" },
+        },
+        "route-dot": {
+          "0%": { strokeDashoffset: "0" },
+          "100%": { strokeDashoffset: "-76" },
+        },
+        "response-ray": {
+          "0%": { opacity: "0", transform: "scale(0.4)" },
+          "35%": { opacity: "0.7", transform: "scale(1)" },
+          "100%": { opacity: "0", transform: "scale(1.3)" },
+        },
+        "autodoc-scan": {
+          "0%": { top: "0%", opacity: "0" },
+          "10%": { opacity: "1" },
+          "90%": { opacity: "1" },
+          "100%": { top: "100%", opacity: "0" },
+        },
+        "autodoc-line-reveal": {
+          "0%": { opacity: "0", transform: "translateX(4px)" },
+          "100%": { opacity: "1", transform: "translateX(0)" },
+        },
+        "rate-allow": {
+          "0%": { strokeDashoffset: "0" },
+          "100%": { strokeDashoffset: "-84" },
+        },
+        "rate-block": {
+          "0%, 100%": { strokeDashoffset: "0", opacity: "0" },
+          "8%": { strokeDashoffset: "0", opacity: "0.7" },
+          "55%": { strokeDashoffset: "-35", opacity: "0.7" },
+          "70%": { strokeDashoffset: "-35", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -99,6 +171,22 @@ module.exports = {
         "fade-in": "fade-in 0.5s ease-out forwards",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+        "pulse-slow": "pulse-slow 4s ease-in-out infinite",
+        "float-node": "float-node 3s ease-in-out infinite",
+        "line-pulse": "line-pulse 2.5s ease-in-out infinite",
+        "error-caught": "error-caught 2.2s ease-in-out infinite",
+        "flow-line-opacity": "flow-line-opacity 3s ease-in-out infinite",
+        "flow-dash": "flow-dash 4s linear infinite",
+        "flow-blip": "flow-blip 2s ease-in-out infinite",
+        "error-absorbed": "error-absorbed 2.5s ease-in infinite",
+        "server-pulse": "server-pulse 2.2s ease-in-out infinite",
+        "route-param": "route-param 2s ease-in-out infinite",
+        "route-dot": "route-dot 2.5s linear infinite",
+        "response-ray": "response-ray 2.4s ease-out infinite",
+        "autodoc-scan": "autodoc-scan 2.5s ease-in-out infinite",
+        "autodoc-line-reveal": "autodoc-line-reveal 0.5s ease-out forwards",
+        "rate-allow": "rate-allow 3s linear infinite",
+        "rate-block": "rate-block 3.5s ease-in-out infinite",
       },
       animationDelay: {
         100: "100ms",

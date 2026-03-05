@@ -1,3 +1,4 @@
+import HudFrame from '@/components/layouts/Home/HudFrame.jsx'
 import SectionWrapper from '@/components/layouts/Home/SectionWrapper.jsx'
 import comparisonData from '@/data/web-content/home/comparison.js'
 import { useInView } from '@/hooks/useInView.js'
@@ -9,11 +10,16 @@ const WhyTejas = () => {
   return (
     <section className="w-full" id="why-tejas">
       <SectionWrapper className="max-w-4xl">
-        <div ref={ref} className={cn('flex flex-col gap-10', 'scroll-in-up', inView && 'in-view')}>
+        <div ref={ref} className={cn('relative flex flex-col gap-10', 'scroll-in-up', inView && 'in-view')}>
+          <HudFrame callsign="TX-04 // COMPARISON" />
+
           <div className="text-center">
             <h2 className="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
               Why Tejas?
             </h2>
+            <p className="text-sm text-muted-foreground mt-1">
+              Flight deck comparison
+            </p>
             <div className="horizon-line mt-2" aria-hidden />
           </div>
           <div className="overflow-hidden rounded-lg border border-border">

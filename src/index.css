@@ -176,4 +176,120 @@
   .hover-glow-sky:hover {
     box-shadow: 0 0 24px hsl(199 89% 48% / 0.2);
   }
+
+  /* Bento section — theme-aware cards with per-accent glow */
+  .bento-dark-divider {
+    height: 1px;
+    width: 100%;
+    max-width: 12rem;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(90deg, transparent, hsl(var(--border)) 30%, hsl(199 89% 48% / 0.35) 50%, hsl(var(--border)) 70%, transparent);
+    opacity: 0.8;
+  }
+  .bento-dark-card {
+    --bento-accent: 199 89% 58%;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    position: relative;
+  }
+  .bento-dark-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(
+      ellipse 90% 50% at 50% 100%,
+      hsl(var(--bento-accent) / 0.05) 0%,
+      transparent 60%
+    );
+  }
+  .bento-dark-card:hover {
+    border-color: hsl(var(--bento-accent) / 0.35);
+    box-shadow: 0 0 36px hsl(var(--bento-accent) / 0.1);
+    transform: translateY(-2px);
+  }
+  .bento-dark-card[data-accent="sky"]     { --bento-accent: 199 89% 58%; }
+  .bento-dark-card[data-accent="amber"]   { --bento-accent: 38 92% 50%; }
+  .bento-dark-card[data-accent="violet"]  { --bento-accent: 263 70% 58%; }
+  .bento-dark-card[data-accent="emerald"] { --bento-accent: 160 84% 39%; }
+  .bento-dark-card[data-accent="rose"]    { --bento-accent: 347 77% 50%; }
+  .bento-dark-visual {
+    border-top: 1px solid hsl(var(--border) / 0.5);
+  }
+  .bento-placeholder {
+    background: radial-gradient(ellipse 55% 55% at 50% 50%, hsl(var(--bento-accent) / 0.04) 0%, transparent 70%);
+  }
+
+  /* What's in Tejas: icon container and hero card */
+  .feature-icon-wrap {
+    transition: background-color 0.2s ease;
+  }
+  .bento-card:hover .feature-icon-wrap,
+  .features-hero-card:hover .feature-icon-wrap {
+    background-color: hsl(199 89% 48% / 0.15);
+  }
+
+  /* Auto-Documentation feature: scan line + doc line reveal */
+  .autodoc-scan-line {
+    animation: autodoc-scan 2.5s ease-in-out infinite;
+    box-shadow: 0 0 12px hsl(263 70% 58% / 0.5);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .autodoc-scan-line { animation: none !important; opacity: 0; }
+  }
+
+  /* AI-Native feature: hi-tech grid background */
+  .ainative-grid {
+    background-image: linear-gradient(hsl(199 89% 58% / 0.15) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(199 89% 58% / 0.15) 1px, transparent 1px);
+    background-size: 1.25rem 1.25rem;
+    mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black 20%, transparent 70%);
+  }
+
+  /* Respect reduced motion: minimal or no animation */
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-in-up {
+      transition-duration: 0.01ms;
+    }
+    .scroll-in-up .bento-card,
+    .scroll-in-up .features-hero-card {
+      transition-duration: 0.01ms;
+    }
+    .bento-card:hover,
+    .features-hero-card:hover {
+      transform: none;
+    }
+    .feature-icon-wrap {
+      transition-duration: 0.01ms;
+    }
+    .ainative-node,
+    .ainative-orb {
+      animation: none !important;
+    }
+    .motion-safe\:animate-float-node,
+    .motion-safe\:animate-pulse-slow,
+    .motion-safe\:animate-line-pulse,
+    .motion-safe\:animate-error-caught,
+    .motion-safe\:animate-flow-line-opacity,
+    .motion-safe\:animate-flow-dash,
+    .motion-safe\:animate-flow-blip,
+    .motion-safe\:animate-error-absorbed,
+    .motion-safe\:animate-server-pulse,
+    .motion-safe\:animate-route-param,
+    .motion-safe\:animate-route-dot,
+    .motion-safe\:animate-response-ray,
+    .motion-safe\:animate-rate-allow,
+    .motion-safe\:animate-rate-block {
+      animation: none !important;
+    }
+    .zero-config-error-particle {
+      animation: none !important;
+    }
+    .hero-heading-tape,
+    .hero-contrail {
+      animation: none !important;
+    }
+  }
 }
