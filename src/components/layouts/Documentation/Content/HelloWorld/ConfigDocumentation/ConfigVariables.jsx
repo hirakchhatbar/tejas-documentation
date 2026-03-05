@@ -36,6 +36,20 @@ const configOptions = [
     description: 'HTTP methods allowed at the framework level. Non-standard methods (e.g. TRACE, CONNECT) are rejected with 405 before route matching. Set in tejas.config.json as an array (e.g. ["GET","POST"]) or via env as a comma-separated string.'
   },
   {
+    key: 'warn_missing_allowed_methods',
+    type: 'boolean',
+    default: 'true (warn)',
+    description: (
+      <>
+        When an endpoint has no allowed methods defined (see{' '}
+        <Link to="/docs/routing#method-restriction" className="text-sky-600 dark:text-sky-400 hover:underline">
+          Restricting HTTP methods
+        </Link>
+        ), the framework logs a warning once per path at runtime. Set to <code className="rounded bg-muted px-1 py-0.5">false</code> (env: <code className="rounded bg-muted px-1 py-0.5">WARN_MISSING_ALLOWED_METHODS=false</code>) to disable this warning.
+      </>
+    )
+  },
+  {
     key: 'db.type',
     description: 'Database type. Currently supported: "mongodb". More will be added and documented.'
   },

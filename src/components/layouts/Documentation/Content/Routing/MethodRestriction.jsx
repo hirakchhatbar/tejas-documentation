@@ -38,6 +38,10 @@ const MethodRestriction = () => {
           theme={tejasTheme}
         />
       </div>
+
+      <p className="text-sm text-muted-foreground">
+        Endpoints without allowed methods trigger a one-time runtime warning per path. To disable it, set <code className="rounded bg-muted px-1 py-0.5">WARN_MISSING_ALLOWED_METHODS=false</code> (env) or <code className="rounded bg-muted px-1 py-0.5">warn_missing_allowed_methods: false</code> in config. See <Link to="/docs/configuration#available-options" className="text-sky-600 dark:text-sky-400 hover:underline">Configuration</Link>.
+      </p>
     </div>
   )
 }
