@@ -4,7 +4,8 @@ import {
   fireJSON,
   fireStatusOnly,
   fireTextOnly,
-  fireWithStatusAndData
+  fireWithStatusAndData,
+  fireResponseStructure
 } from '@/data/code-blocks/ammo/fire.js'
 import { headers, payload } from '@/data/code-blocks/ammo/properties.js'
 import { tejasTheme } from '@/lib/code-block-themes.js'
@@ -54,6 +55,21 @@ const Basics = () => {
           method of the Ammo object is used to send a response to the client.
           This should be called at the end of the request handler.
         </p>
+        <div id={'response-structure'} className={'flex flex-col gap-2'}>
+          <h4 className="text-sm font-medium">Response structure (default)</h4>
+          <p className="text-sm text-muted-foreground">
+            Tejas wraps all success responses in <code className="rounded bg-muted px-1 py-0.5">{' { data: ... } '}</code> and
+            error responses in <code className="rounded bg-muted px-1 py-0.5">{' { error: ... } '}</code>. This is the recommended,
+            consistent shape for every response.
+          </p>
+          <CodeBlock
+            code={fireResponseStructure}
+            language={'javascript'}
+            withLineNumbers={true}
+            withCopy={true}
+            theme={tejasTheme}
+          />
+        </div>
         <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
           <div id={'text-response'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>Simple Text Response</span>

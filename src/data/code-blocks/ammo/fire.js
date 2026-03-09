@@ -8,7 +8,7 @@ const fireTextOnly = `target.register("/", (ammo) => {
 
 const fireJSON = `target.register("/", (ammo) => {
   
-  // Send JSON object as response with default status code 200
+  // Send JSON — Tejas wraps it: response is { "data": { "message": "Hello World!" } }
   
   const data = { message: "Hello World!" }; // or any other JSON data
   ammo.fire(data);
@@ -32,11 +32,21 @@ const fireEmpty = `target.register("/", (ammo) => {
 
 const fireWithStatusAndData = `target.register("/", (ammo) => {
   
-  // Send status code with custom message
+  // 2xx → { "data": ... }, 4xx/5xx → { "error": "..." }
   
   const statusCode = YOUR_STATUS_CODE; // e.g. 404, 500, 200, etc.
-  const customMessage = "Your custom message" // or JSON data;
+  const customMessage = "Your custom message"; // or JSON data
   ammo.fire(statusCode, customMessage);
+})`
+
+const fireResponseStructure = `// Tejas wraps responses by default (recommended):
+// Success (2xx):  ammo.fire(200, user)   → { "data": { ...user } }
+// Error (4xx/5xx): ammo.fire(400, "Bad") → { "error": "Bad" }
+// 204 / redirects: no envelope
+
+target.register("/user", (ammo) => {
+  if (ammo.GET) return ammo.fire(200, { id: 1, name: "Alice" });
+  ammo.fire(400, "Method not allowed");
 })`
 
 export {
@@ -44,5 +54,6 @@ export {
   fireJSON,
   fireStatusOnly,
   fireEmpty,
-  fireWithStatusAndData
+  fireWithStatusAndData,
+  fireResponseStructure
 }

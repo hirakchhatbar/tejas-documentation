@@ -58,6 +58,20 @@ const configOptions = [
     description: 'Connection URI for the database (e.g. "mongodb://localhost:27017"). Get this from your database provider.'
   },
   {
+    key: 'response',
+    id: 'response-structure',
+    default: 'envelopeEnabled: true, successKey: "data", errorKey: "error"',
+    description: (
+      <>
+        Standard response envelope. When <code className="rounded bg-muted px-1.5 py-0.5">response.envelopeEnabled</code> is true (default), all success responses are wrapped as <code className="rounded bg-muted px-1 py-0.5">{' { data: ... } '}</code> and errors as <code className="rounded bg-muted px-1 py-0.5">{' { error: ... } '}</code>. See{' '}
+        <Link to="/docs/ammo#response-structure" className="text-sky-600 dark:text-sky-400 hover:underline">
+          Ammo — Response Structure
+        </Link>
+        {' '}and <code className="rounded bg-muted px-1.5 py-0.5">response.successKey</code> / <code className="rounded bg-muted px-1.5 py-0.5">response.errorKey</code> to customize or disable.
+      </>
+    )
+  },
+  {
     key: 'errors.llm',
     description: (
       <>
@@ -75,7 +89,7 @@ const ConfigVariables = () => {
   return (
     <ul className="flex flex-col divide-y divide-border rounded-lg border border-border bg-card overflow-hidden">
       {configOptions.map((opt) => (
-        <li key={opt.key} className="flex flex-col gap-1.5 px-4 py-3">
+        <li key={opt.key} id={opt.id} className="flex flex-col gap-1.5 px-4 py-3">
           <div className="flex flex-wrap items-baseline gap-2">
             <code className="rounded bg-muted px-2 py-0.5 text-sm font-medium text-foreground">
               {opt.key}

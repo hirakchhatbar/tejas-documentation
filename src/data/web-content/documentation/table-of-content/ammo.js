@@ -17,16 +17,21 @@ const data = [
         value: 'headers',
         link: '#headers'
       },
-      {
-        title: 'Send Response',
-        value: 'send-response',
-        link: '#send-response',
-        subItems: [
-          {
-            title: 'Text Response',
-            value: 'text-response',
-            link: '#text-response'
-          },
+{
+            title: 'Send Response',
+            value: 'send-response',
+            link: '#send-response',
+            subItems: [
+              {
+                title: 'Response Structure',
+                value: 'response-structure',
+                link: '#response-structure'
+              },
+              {
+                title: 'Text Response',
+                value: 'text-response',
+                link: '#text-response'
+              },
           {
             title: 'JSON Response',
             value: 'json-response',

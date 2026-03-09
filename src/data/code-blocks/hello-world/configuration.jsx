@@ -15,6 +15,11 @@ const configFileFull = `{
   "dir": {
     "targets": "targets"
   },
+  "response": {
+    "envelopeEnabled": true,
+    "successKey": "data",
+    "errorKey": "error"
+  },
   "db": {
     "type": "mongodb",
     "uri": "YOUR_MONGO_CONNECTION_STRING"
@@ -37,6 +42,11 @@ LOG_EXCEPTIONS=true
 
 # Targets directory
 DIR_TARGETS=targets
+
+# Response structure (default: enabled)
+RESPONSE_ENVELOPE_ENABLED=true
+# RESPONSE_SUCCESSKEY=data
+# RESPONSE_ERRORKEY=error
 
 # Database
 DB_TYPE=mongodb
