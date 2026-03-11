@@ -62,4 +62,50 @@ throw new TejError(400, 'Invalid email format');
 ammo.throw({ useLlm: false });
 ammo.throw({ messageType: 'developer' });`
 
-export { cleanCode, tejError, enableLogging, convenienceMethods, ammoThrowExample, llmInferredExample }
+const asyncModeEnvExample = `# .env
+ERRORS_LLM_MODE=async
+ERRORS_LLM_CHANNEL=both`
+
+const asyncModeConfigExample = `// tejas.config.json
+{
+  "errors": {
+    "llm": {
+      "enabled": true,
+      "mode": "async",
+      "channel": "both",
+      "logFile": "./logs/llm-errors.log"
+    }
+  }
+}`
+
+const asyncModeCodeExample = `// Programmatic setup
+app.withLLMErrors({
+  mode: 'async',
+  channel: 'both',
+  logFile: './logs/llm-errors.log',
+});
+app.takeoff();`
+
+const rateLimitExample = `# Cap at 20 LLM calls per minute (default: 10)
+ERRORS_LLM_RATE_LIMIT=20`
+
+const cachingExample = `# Cache results for 24 hours — only enhance new errors
+ERRORS_LLM_CACHE=true
+ERRORS_LLM_CACHE_TTL=86400000
+
+# Or programmatically:
+app.withLLMErrors({ cache: true, cacheTTL: 86400000 });`
+
+export {
+  cleanCode,
+  tejError,
+  enableLogging,
+  convenienceMethods,
+  ammoThrowExample,
+  llmInferredExample,
+  asyncModeEnvExample,
+  asyncModeConfigExample,
+  asyncModeCodeExample,
+  rateLimitExample,
+  cachingExample
+}
