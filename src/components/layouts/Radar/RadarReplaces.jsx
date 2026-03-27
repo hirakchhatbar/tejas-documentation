@@ -44,8 +44,6 @@ const REPLACED_TOOLS = [
   }
 ]
 
-const CODE_LINE = 'app.withRadar({ apiKey })'
-
 const RadarReplaces = () => {
   const [sectionRef, sectionInView] = useInView()
 
@@ -73,27 +71,28 @@ const RadarReplaces = () => {
             <div className='bento-dark-divider mt-2' aria-hidden />
           </div>
 
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-5xl mx-auto'>
-            {/* Left: tools being replaced */}
-            <div className='flex flex-col gap-3'>
-              {REPLACED_TOOLS.map((tool, i) => (
-                <div
-                  key={tool.category}
-                  className='bento-card bento-dark-card group flex flex-col rounded-xl overflow-hidden transition-all duration-300'
-                  data-accent='rose'
-                  style={{ transitionDelay: `${Math.min(i * 60, 300)}ms` }}
-                >
-                  <div className='h-px w-full bg-gradient-to-r from-rose-500/40 to-rose-400/20' />
-                  <div className='flex items-center gap-4 p-4'>
+          <div className='grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center max-w-5xl mx-auto'>
+            {/* Left: all tools in one card */}
+            <div
+              className='bento-dark-card rounded-xl overflow-hidden'
+              data-accent='rose'
+            >
+              <div className='h-px w-full bg-gradient-to-r from-rose-500/40 to-rose-400/20' />
+              <div className='divide-y divide-border/50'>
+                {REPLACED_TOOLS.map((tool) => (
+                  <div
+                    key={tool.category}
+                    className='flex items-center gap-4 px-5 py-3'
+                  >
                     <tool.Icon
-                      className='h-5 w-5 shrink-0 text-muted-foreground/40'
+                      className='h-4 w-4 shrink-0 text-muted-foreground/30'
                       strokeWidth={1.8}
                     />
                     <div className='flex-1 min-w-0'>
-                      <span className='text-sm font-medium text-muted-foreground/60 line-through decoration-muted-foreground/30'>
+                      <span className='text-sm font-medium text-muted-foreground/50 line-through decoration-muted-foreground/25'>
                         {tool.category}
                       </span>
-                      <p className='text-xs text-muted-foreground/30 truncate'>
+                      <p className='text-xs text-muted-foreground/25 truncate'>
                         {tool.examples}
                       </p>
                     </div>
@@ -101,14 +100,15 @@ const RadarReplaces = () => {
                       $$$
                     </span>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
+
+            {/* Arrow */}
+            <ArrowRightIcon className='h-8 w-8 text-sky-500/40 shrink-0 rotate-90 lg:rotate-0 mx-auto' />
 
             {/* Right: the one line */}
             <div className='flex flex-col items-center gap-6'>
-              <ArrowRightIcon className='h-8 w-8 text-sky-500/40 hidden lg:block' />
-
               <div className='relative w-full'>
                 <div
                   className='bento-dark-card rounded-xl overflow-hidden'
@@ -120,7 +120,7 @@ const RadarReplaces = () => {
                       All replaced by:
                     </p>
                     <code className='font-mono text-lg sm:text-xl md:text-2xl font-semibold text-sky-400'>
-                      {CODE_LINE}
+                      app.withRadar({'{ apiKey }'})
                     </code>
                     <p className='font-mono text-xs text-muted-foreground/30 mt-4'>
                       One line &middot; Zero config &middot; Full observability
