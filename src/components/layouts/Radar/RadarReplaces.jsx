@@ -15,32 +15,38 @@ const REPLACED_TOOLS = [
   {
     Icon: ActivityIcon,
     category: 'Log Aggregation',
-    examples: 'Datadog Logs, Logtail, Papertrail'
+    examples: 'Datadog Logs, Logtail, Papertrail',
+    cost: 4
   },
   {
     Icon: AlertTriangleIcon,
     category: 'Error Tracking',
-    examples: 'Sentry, Bugsnag, Rollbar'
+    examples: 'Sentry, Bugsnag, Rollbar',
+    cost: 3
   },
   {
     Icon: GitBranchIcon,
     category: 'APM & Tracing',
-    examples: 'New Relic, Jaeger, Zipkin'
+    examples: 'New Relic, Jaeger, Zipkin',
+    cost: 3
   },
   {
     Icon: BarChart3Icon,
     category: 'Metrics & Dashboards',
-    examples: 'Grafana, Prometheus, Datadog APM'
+    examples: 'Grafana, Prometheus, Datadog APM',
+    cost: 4
   },
   {
     Icon: MonitorIcon,
     category: 'Request Inspection',
-    examples: 'LogRocket, Treblle, Requestly'
+    examples: 'LogRocket, Treblle, Requestly',
+    cost: 2
   },
   {
     Icon: BellRingIcon,
     category: 'Alerting & On-call',
-    examples: 'PagerDuty, Opsgenie, Better Stack'
+    examples: 'PagerDuty, Opsgenie, Better Stack',
+    cost: 3
   }
 ]
 
@@ -85,19 +91,19 @@ const RadarReplaces = () => {
                     className='flex items-center gap-4 px-5 py-3'
                   >
                     <tool.Icon
-                      className='h-4 w-4 shrink-0 text-muted-foreground/30'
+                      className='h-4 w-4 shrink-0 text-muted-foreground/60'
                       strokeWidth={1.8}
                     />
                     <div className='flex-1 min-w-0'>
-                      <span className='text-sm font-medium text-muted-foreground/50 line-through decoration-muted-foreground/25'>
+                      <span className='text-sm font-medium text-muted-foreground/80 line-through decoration-muted-foreground/50'>
                         {tool.category}
                       </span>
-                      <p className='text-xs text-muted-foreground/25 truncate'>
+                      <p className='text-xs text-muted-foreground/60 truncate'>
                         {tool.examples}
                       </p>
                     </div>
-                    <span className='text-xs text-muted-foreground/20 font-mono'>
-                      $$$
+                    <span className='text-sm font-semibold text-rose-400/80 font-mono tracking-tight'>
+                      {'$'.repeat(tool.cost)}
                     </span>
                   </div>
                 ))}
