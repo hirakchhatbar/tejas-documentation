@@ -10,6 +10,7 @@ import errorHandlingToc from '@/data/web-content/documentation/table-of-content/
 import fileUploadsToc from '@/data/web-content/documentation/table-of-content/file-uploads.js'
 import middlewareToc from '@/data/web-content/documentation/table-of-content/middleware.js'
 import rateLimitingToc from '@/data/web-content/documentation/table-of-content/rate-limiting.js'
+import radarToc from '@/data/web-content/documentation/table-of-content/radar.js'
 import routingToc from '@/data/web-content/documentation/table-of-content/routing.js'
 
 const tocByKey = {
@@ -25,7 +26,8 @@ const tocByKey = {
   cli: cliToc,
   'api-reference': apiReferenceToc,
   'llm-error-handling': llmErrorHandlingToc,
-  'auto-docs': autoDocsToc
+  'auto-docs': autoDocsToc,
+  radar: radarToc
 }
 
 /**

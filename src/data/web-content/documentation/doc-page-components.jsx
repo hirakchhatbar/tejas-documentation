@@ -11,6 +11,7 @@ import CLI from '@/components/layouts/Documentation/Content/CLI.jsx'
 import ApiReference from '@/components/layouts/Documentation/Content/ApiReference.jsx'
 import AutoDocs from '@/components/layouts/Documentation/Content/AutoDocs.jsx'
 import LlmErrorHandling from '@/components/layouts/Documentation/Content/LlmErrorHandling.jsx'
+import Radar from '@/components/layouts/Documentation/Content/Radar.jsx'
 
 /** Map componentKey from sidebar-menu to the page component. Only imported where needed (Content.jsx) to avoid circular deps. */
 export const docPageComponents = {
@@ -26,5 +27,6 @@ export const docPageComponents = {
   cli: CLI,
   'api-reference': ApiReference,
   'llm-error-handling': LlmErrorHandling,
-  'auto-docs': AutoDocs
+  'auto-docs': AutoDocs,
+  radar: Radar
 }

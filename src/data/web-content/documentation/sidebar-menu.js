@@ -83,6 +83,17 @@ export const sidebarGroups = [
     ]
   },
   {
+    label: 'Observability',
+    items: [
+      {
+        componentKey: 'radar',
+        title: 'Radar',
+        path: '/docs/radar',
+        tocKey: 'radar'
+      }
+    ]
+  },
+  {
     label: 'AI Native',
     items: [
       {
