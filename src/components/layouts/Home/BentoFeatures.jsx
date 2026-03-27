@@ -1,6 +1,5 @@
 import AINativeVisual from '@/components/layouts/Home/AINativeVisual.jsx'
 import AutoDocVisual from '@/components/layouts/Home/AutoDocVisual.jsx'
-import DatabaseVisual from '@/components/layouts/Home/DatabaseVisual.jsx'
 import HudFrame from '@/components/layouts/Home/HudFrame.jsx'
 import ZeroConfigErrorVisual from '@/components/layouts/Home/ZeroConfigErrorVisual.jsx'
 import RateLimitVisual from '@/components/layouts/Home/RateLimitVisual.jsx'
@@ -14,8 +13,7 @@ const VISUAL_MAP = {
   'Auto-Documentation': AutoDocVisual,
   'Zero-Config Error Handling': ZeroConfigErrorVisual,
   'Built-in Rate Limiting': RateLimitVisual,
-  'Simple Routing': SimpleRoutingVisual,
-  'Built-in Database': DatabaseVisual
+  'Simple Routing': SimpleRoutingVisual
 }
 
 const ACCENT_CLASSES = {

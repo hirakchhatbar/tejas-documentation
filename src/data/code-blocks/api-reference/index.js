@@ -4,12 +4,7 @@ const app = new Tejas(options);`
 
 const tejasMidair = `app.midair(middleware1, middleware2);`
 
-const tejasTakeoff = `app.takeoff();
-
-app.takeoff({
-  withRedis: { url: 'redis://localhost:6379' },
-  withMongo: { uri: 'mongodb://localhost:27017/db' }
-});`
+const tejasTakeoff = `app.takeoff();`
 
 const targetConstructor = `import { Target } from 'te.js';
 
@@ -33,4 +28,11 @@ const tejasWithCORS = `app.withCORS({
   maxAge: 86400
 });`
 
-export { tejasConstructor, tejasMidair, tejasTakeoff, targetConstructor, targetRegister, tejasWithCORS }
+export {
+  tejasConstructor,
+  tejasMidair,
+  tejasTakeoff,
+  targetConstructor,
+  targetRegister,
+  tejasWithCORS
+}

@@ -56,9 +56,10 @@ const ErrorsConfigSection = () => {
         </Link>{' '}
         are enabled, the <strong>errors.llm</strong> block configures the LLM
         used when you call{' '}
-        <code className='rounded bg-muted px-1.5 py-0.5'>ammo.throw()</code>{' '}
-        without explicit code or message — and when the framework catches an
-        error (same mechanism). Unset values fall back to{' '}
+        <code className='rounded bg-muted px-1.5 py-0.5'>ammo.throw()</code> —
+        every throw is enriched with a devInsight for Radar, and bare errors get
+        full status/message inference. The same mechanism applies when the
+        framework catches an error. Unset values fall back to{' '}
         <code className='rounded bg-muted px-1.5 py-0.5'>LLM_BASE_URL</code>,{' '}
         <code className='rounded bg-muted px-1.5 py-0.5'>LLM_API_KEY</code>,{' '}
         <code className='rounded bg-muted px-1.5 py-0.5'>LLM_MODEL</code>. You

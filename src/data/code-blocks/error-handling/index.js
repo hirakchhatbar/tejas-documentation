@@ -28,38 +28,38 @@ ammo.notAllowed();
 // 401 Unauthorized
 ammo.unauthorized();`
 
-const ammoThrowExample = `// Explicit: status code and/or message (always override)
-ammo.throw(404);
-ammo.throw(404, 'User not found');
-ammo.throw(new TejError(400, 'Bad request'));
+const ammoThrowExample = `// All throws get LLM analysis when withLLMErrors() is enabled.
+// Explicit codes/messages are preserved — LLM only adds devInsight.
+ammo.throw(404);                          // 404 + devInsight
+ammo.throw(404, 'User not found');        // 404 "User not found" + devInsight
+ammo.throw(new TejError(400, 'Bad'));     // 400 "Bad" + devInsight
 
-// When errors.llm.enabled: no args — LLM infers from code context (surrounding + upstream/downstream)
+// No args or bare Error — LLM infers status code + message + devInsight
 ammo.throw();
-
-// Optional: pass caught error as secondary signal; LLM still uses code context as primary
 ammo.throw(caughtErr);
 
-// Per-call options: skip LLM or override message type
+// Opt out of LLM for a specific call (works on every signature)
+ammo.throw(502, 'Known issue', { useLlm: false });
 ammo.throw({ useLlm: false });
+
+// Override message type for this call
 ammo.throw({ messageType: 'developer' });`
 
-const llmInferredExample = `// With errors.llm.enabled — call ammo.throw() with no arguments
-// LLM infers status and message from code surrounding the call (with line numbers) and upstream/downstream context
-ammo.throw();
+const llmInferredExample = `// With errors.llm enabled — every ammo.throw() is enriched by the LLM.
+// Explicit codes/messages are always preserved; LLM adds devInsight.
+ammo.throw(404, 'User not found');  // keeps 404 + "User not found", adds devInsight
+ammo.throw(502);                    // keeps 502 + "Bad Gateway", adds devInsight
 
-// Optional: pass error from catch; LLM uses error stack for code context
+// No args or bare Error — LLM infers status code AND message
+ammo.throw();
 try {
   await riskyOp();
 } catch (err) {
-  ammo.throw(err);
+  ammo.throw(err);              // LLM infers from error + code context
 }
 
-// Explicit values always override (LLM not called)
-ammo.throw(404, 'User not found');
-throw new TejError(400, 'Invalid email format');
-
-// Per-call: skip LLM or request developer-friendly message
-ammo.throw({ useLlm: false });
+// Opt out of LLM for a specific call
+ammo.throw(502, 'Known issue', { useLlm: false });
 ammo.throw({ messageType: 'developer' });`
 
 const asyncModeEnvExample = `# .env

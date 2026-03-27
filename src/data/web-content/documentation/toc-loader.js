@@ -6,7 +6,6 @@ import apiReferenceToc from '@/data/web-content/documentation/table-of-content/a
 import llmErrorHandlingToc from '@/data/web-content/documentation/table-of-content/llm-error-handling.js'
 import autoDocsToc from '@/data/web-content/documentation/table-of-content/auto-docs.js'
 import cliToc from '@/data/web-content/documentation/table-of-content/cli.js'
-import databaseToc from '@/data/web-content/documentation/table-of-content/database.js'
 import errorHandlingToc from '@/data/web-content/documentation/table-of-content/error-handling.js'
 import fileUploadsToc from '@/data/web-content/documentation/table-of-content/file-uploads.js'
 import middlewareToc from '@/data/web-content/documentation/table-of-content/middleware.js'
@@ -20,7 +19,6 @@ const tocByKey = {
   routing: routingToc,
   ammo: ammoToc,
   middleware: middlewareToc,
-  database: databaseToc,
   'error-handling': errorHandlingToc,
   'file-uploads': fileUploadsToc,
   'rate-limiting': rateLimitingToc,

@@ -20,10 +20,6 @@ const configFileFull = `{
     "successKey": "data",
     "errorKey": "error"
   },
-  "db": {
-    "type": "mongodb",
-    "uri": "YOUR_MONGO_CONNECTION_STRING"
-  },
   "errors": {
     "llm": {
       "enabled": true,
@@ -47,10 +43,6 @@ DIR_TARGETS=targets
 RESPONSE_ENVELOPE_ENABLED=true
 # RESPONSE_SUCCESSKEY=data
 # RESPONSE_ERRORKEY=error
-
-# Database
-DB_TYPE=mongodb
-DB_URI=YOUR_MONGO_CONNECTION_STRING
 
 # Optional: errors.llm (LLM-inferred errors for ammo.throw())
 ERRORS_LLM_ENABLED=true

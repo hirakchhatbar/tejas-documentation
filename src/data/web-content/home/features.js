@@ -1,6 +1,5 @@
 import {
   BotIcon,
-  DatabaseIcon,
   FileCodeIcon,
   RouteIcon,
   ShieldCheckIcon,
@@ -42,13 +41,6 @@ const features = [
     description:
       'Clean, method-agnostic URL structures with parameterized routes for expressive and flexible APIs.',
     accent: 'emerald'
-  },
-  {
-    Icon: DatabaseIcon,
-    title: 'Built-in Database',
-    description:
-      'Redis and MongoDB out of the box with app.withRedis() and app.withMongo(). Drivers auto-install on first use.',
-    accent: 'sky'
   },
   {
     Icon: FileCodeIcon,

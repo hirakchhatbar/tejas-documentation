@@ -1,22 +1,21 @@
 const ammoThrow = `target.register("/users/:id", (ammo) => {
   const user = findUser(ammo.payload.id);
 
-  // No arguments: LLM infers from code context when errors.llm.enabled (no error object required)
+  // No arguments: LLM infers status + message from code context
   if (!user) return ammo.throw();
 
-  // Explicit: status code and message (always override)
+  // Explicit code preserved; LLM adds devInsight for Radar
   if (!user.isActive) return ammo.throw(403, "Account disabled");
 
-  // Optional: pass caught error; LLM uses error stack for code context
+  // Pass caught error: LLM infers from error + code context
   try {
     validate(user);
   } catch (err) {
     return ammo.throw(err);
   }
 
-  // Per-call options: skip LLM or override message type
-  // ammo.throw({ useLlm: false });
-  // ammo.throw({ messageType: 'developer' });
+  // Opt out of LLM for a specific call
+  // ammo.throw(502, 'Known issue', { useLlm: false });
 
   ammo.fire(user);
 })`

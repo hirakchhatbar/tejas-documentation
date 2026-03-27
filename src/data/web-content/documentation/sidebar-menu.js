@@ -56,12 +56,6 @@ export const sidebarGroups = [
     label: 'More',
     items: [
       {
-        componentKey: 'database',
-        title: 'Database',
-        path: '/docs/database',
-        tocKey: 'database'
-      },
-      {
         componentKey: 'file-uploads',
         title: 'File Uploader',
         path: '/docs/file-uploader',
@@ -103,7 +97,11 @@ export const sidebarGroups = [
         path: '/docs/auto-docs',
         tocKey: 'auto-docs'
       },
-      { title: 'AI Test Generation', path: '/docs/ai-test-generation', comingSoon: true }
+      {
+        title: 'AI Test Generation',
+        path: '/docs/ai-test-generation',
+        comingSoon: true
+      }
     ]
   }
 ]
@@ -125,7 +123,8 @@ export function getPrevNext(path) {
   if (idx < 0) return { prev: null, next: null }
   return {
     prev: idx > 0 ? withComponent[idx - 1] : null,
-    next: idx < withComponent.length - 1 && idx >= 0 ? withComponent[idx + 1] : null
+    next:
+      idx < withComponent.length - 1 && idx >= 0 ? withComponent[idx + 1] : null
   }
 }
 

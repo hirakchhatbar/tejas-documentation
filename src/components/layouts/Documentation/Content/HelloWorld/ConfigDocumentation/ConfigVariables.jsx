@@ -50,14 +50,6 @@ const configOptions = [
     )
   },
   {
-    key: 'db.type',
-    description: 'Database type. Currently supported: "mongodb". More will be added and documented.'
-  },
-  {
-    key: 'db.uri',
-    description: 'Connection URI for the database (e.g. "mongodb://localhost:27017"). Get this from your database provider.'
-  },
-  {
     key: 'response',
     id: 'response-structure',
     default: 'envelopeEnabled: true, successKey: "data", errorKey: "error"',

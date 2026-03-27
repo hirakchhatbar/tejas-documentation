@@ -3,7 +3,6 @@ const quickStart = `import Tejas from 'te.js';
 const app = new Tejas();
 
 app
-  .withRedis({ url: 'redis://localhost:6379' })
   .withRateLimit({
     maxRequests: 100,
     timeWindowSeconds: 60
@@ -14,7 +13,7 @@ const configuration = `app.withRateLimit({
   maxRequests: 100,
   timeWindowSeconds: 60,
   algorithm: 'sliding-window',  // 'sliding-window' | 'token-bucket' | 'fixed-window'
-  store: 'redis',              // 'redis' | 'memory'
+  store: 'memory',              // 'memory' or { type: 'redis', url: '...' }
   keyGenerator: (ammo) => ammo.ip,
   onRateLimited: (ammo) => {
     ammo.fire(429, { error: 'Slow down!' });
@@ -33,4 +32,13 @@ const memoryStore = `app.withRateLimit({
   store: 'memory'
 });`
 
-export { quickStart, configuration, slidingWindow, memoryStore }
+const redisStore = `app.withRateLimit({
+  maxRequests: 100,
+  timeWindowSeconds: 60,
+  store: {
+    type: 'redis',
+    url: 'redis://localhost:6379'
+  }
+});`
+
+export { quickStart, configuration, slidingWindow, memoryStore, redisStore }

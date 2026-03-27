@@ -6,16 +6,27 @@ import {
   reqAndRes
 } from '@/data/code-blocks/ammo/properties.js'
 import { tejasTheme } from '@/lib/code-block-themes.js'
-import { notAllowed, notFound, only, unauthorized } from '@/data/code-blocks/ammo/functions.js'
-import { ammoThrow, ammoRedirect, ammoDefaultEntry } from '@/data/code-blocks/ammo/response-methods.js'
+import {
+  notAllowed,
+  notFound,
+  only,
+  unauthorized
+} from '@/data/code-blocks/ammo/functions.js'
+import {
+  ammoThrow,
+  ammoRedirect,
+  ammoDefaultEntry
+} from '@/data/code-blocks/ammo/response-methods.js'
 
 const Advanced = () => {
   return (
     <div className={'flex flex-col gap-8'}>
-      <h2 id={'advanced'} className="text-xl font-semibold tracking-tight">Advanced</h2>
+      <h2 id={'advanced'} className='text-xl font-semibold tracking-tight'>
+        Advanced
+      </h2>
 
       <div id={'req-and-res'} className={'flex flex-col gap-2'}>
-        <h3 className="text-base font-medium">req and res</h3>
+        <h3 className='text-base font-medium'>req and res</h3>
         <p>
           te.js provides direct access to the native Node.js req
           (http.IncomingMessage) and res (http.ServerResponse) objects, enabling
@@ -31,7 +42,9 @@ const Advanced = () => {
       </div>
 
       <div className={'flex flex-col gap-2'}>
-        <h3 id={'properties'} className="text-base font-medium">Properties</h3>
+        <h3 id={'properties'} className='text-base font-medium'>
+          Properties
+        </h3>
         <div className={'w-full grid grid-cols-1 gap-3'}>
           <div id={'ip-address'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>IP Address</span>
@@ -69,7 +82,9 @@ const Advanced = () => {
       </div>
 
       <div className={'flex flex-col gap-2'}>
-        <h3 id={'functions'} className="text-base font-medium">Functions</h3>
+        <h3 id={'functions'} className='text-base font-medium'>
+          Functions
+        </h3>
         <div className={'w-full grid grid-cols-1 gap-3'}>
           <div id={'unauthorized'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>Unauthorized</span>
@@ -96,7 +111,10 @@ const Advanced = () => {
           <div id={'only'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>only(methods)</span>
             <p className={'text-sm text-muted-foreground'}>
-              Restrict the handler to specific HTTP methods. If the request method is not in the list, sets the <code>Allow</code> header and throws 405. Call at the start of the handler (e.g. <code>ammo.only('GET')</code>).
+              Restrict the handler to specific HTTP methods. If the request
+              method is not in the list, sets the <code>Allow</code> header and
+              throws 405. Call at the start of the handler (e.g.{' '}
+              <code>ammo.only('GET')</code>).
             </p>
             <CodeBlock
               code={only}
@@ -110,7 +128,9 @@ const Advanced = () => {
           <div id={'not-allowed'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>Not Allowed</span>
             <p className={'text-sm text-muted-foreground'}>
-              Throws 405 Method Not Allowed. Pass allowed methods to set the <code>Allow</code> header (e.g. <code>ammo.notAllowed('GET', 'POST')</code>).
+              Throws 405 Method Not Allowed. Pass allowed methods to set the{' '}
+              <code>Allow</code> header (e.g.{' '}
+              <code>ammo.notAllowed('GET', 'POST')</code>).
             </p>
             <CodeBlock
               code={notAllowed}
@@ -124,7 +144,13 @@ const Advanced = () => {
           <div id={'throw'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>throw()</span>
             <p className={'text-sm text-muted-foreground'}>
-              Send error responses with a status code, custom message, or from an Error object. When <code>errors.llm.enabled</code>, call <code>ammo.throw()</code> with <strong>no arguments</strong> and an LLM infers status and message from the code surrounding the call (with line numbers) and upstream/downstream context — no error object required. Optional per-call options: <code>{'{ useLlm, messageType }'}</code>. See Error Handling.
+              Send error responses with a status code, custom message, or from
+              an Error object. When <code>errors.llm.enabled</code>, every{' '}
+              <code>ammo.throw()</code> call is enriched with a devInsight for
+              Radar. Explicit status codes and messages are preserved; for bare
+              errors and no-arg throws the LLM also infers the status code and
+              message. Opt out per call with <code>{'{ useLlm: false }'}</code>.
+              See Error Handling.
             </p>
             <CodeBlock
               code={ammoThrow}
@@ -138,7 +164,8 @@ const Advanced = () => {
           <div id={'redirect'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>redirect()</span>
             <p className={'text-sm text-muted-foreground'}>
-              Send an HTTP redirect. Default is 302 (temporary). Use 301 for permanent redirects.
+              Send an HTTP redirect. Default is 302 (temporary). Use 301 for
+              permanent redirects.
             </p>
             <CodeBlock
               code={ammoRedirect}
@@ -152,7 +179,8 @@ const Advanced = () => {
           <div id={'default-entry'} className={'flex flex-col gap-1'}>
             <span className={'text-muted-foreground'}>defaultEntry()</span>
             <p className={'text-sm text-muted-foreground'}>
-              Serve the default HTML entry point at <code>/</code>. Typically used as the root route handler.
+              Serve the default HTML entry point at <code>/</code>. Typically
+              used as the root route handler.
             </p>
             <CodeBlock
               code={ammoDefaultEntry}
@@ -164,7 +192,6 @@ const Advanced = () => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

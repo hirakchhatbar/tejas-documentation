@@ -4,7 +4,6 @@ import Configuration from '@/components/layouts/Documentation/Content/Configurat
 import Routing from '@/components/layouts/Documentation/Content/Routing.jsx'
 import Ammo from '@/components/layouts/Documentation/Content/Ammo.jsx'
 import Middleware from '@/components/layouts/Documentation/Content/Middleware.jsx'
-import Database from '@/components/layouts/Documentation/Content/Database.jsx'
 import ErrorHandling from '@/components/layouts/Documentation/Content/ErrorHandling.jsx'
 import FileUploads from '@/components/layouts/Documentation/Content/FileUploads.jsx'
 import RateLimiting from '@/components/layouts/Documentation/Content/RateLimiting.jsx'
@@ -21,7 +20,6 @@ export const docPageComponents = {
   routing: Routing,
   ammo: Ammo,
   middleware: Middleware,
-  database: Database,
   'error-handling': ErrorHandling,
   'file-uploads': FileUploads,
   'rate-limiting': RateLimiting,

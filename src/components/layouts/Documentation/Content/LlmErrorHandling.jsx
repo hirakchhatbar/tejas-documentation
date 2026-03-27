@@ -16,12 +16,14 @@ const LlmErrorHandling = () => {
     <div className='flex flex-col gap-10'>
       <p className='text-muted-foreground'>
         When <strong>LLM-inferred errors</strong> are enabled, Tejas uses an LLM
-        to infer HTTP status code and message from your{' '}
-        <strong>code context</strong> — the source surrounding{' '}
-        <code>ammo.throw()</code> (with line numbers) and all upstream (callers)
-        and downstream (code that would run next) context. You do not pass an
-        error object; the LLM infers from control flow and intent. This is part
-        of the same{' '}
+        to enrich <strong>every</strong> <code>ammo.throw()</code> call with a{' '}
+        <code>devInsight</code> — a developer-facing diagnostic hint surfaced in
+        Tejas Radar. For bare Error objects and no-arg throws, the LLM also
+        infers the HTTP status code and message from your{' '}
+        <strong>code context</strong> (the source surrounding the call site with
+        line numbers, upstream callers, and downstream code). When you pass an
+        explicit status code or message, those values are always preserved — the
+        LLM only adds insight. This is part of the same{' '}
         <Link
           to='/docs/error-handling'
           className='text-sky-600 dark:text-sky-400 hover:underline'
@@ -36,10 +38,23 @@ const LlmErrorHandling = () => {
         <h2 className='text-xl font-semibold tracking-tight'>How it works</h2>
         <ul className='ml-6 list-disc space-y-1 text-muted-foreground'>
           <li>
-            <strong>No error object required:</strong> Call{' '}
-            <code>ammo.throw()</code> with no arguments (or only options). The
-            framework captures the code around the call site and upstream stack
-            and sends it to the LLM.
+            <strong>Every throw is enriched:</strong> When enabled, every{' '}
+            <code>ammo.throw()</code> call — with or without explicit arguments
+            — is analyzed by the LLM to produce a <code>devInsight</code>{' '}
+            surfaced in Tejas Radar.
+          </li>
+          <li>
+            <strong>Explicit codes are preserved:</strong> When you pass a
+            status code or message (e.g.{' '}
+            <code>ammo.throw(404, &apos;User not found&apos;)</code>), those
+            values are always used for the HTTP response. The LLM only adds
+            diagnostic insight.
+          </li>
+          <li>
+            <strong>Full inference for bare errors:</strong> Call{' '}
+            <code>ammo.throw()</code> with no arguments or a bare Error object
+            and the LLM infers the status code, message, and devInsight from
+            code context.
           </li>
           <li>
             <strong>Opt-in:</strong> Enable via config{' '}
@@ -70,12 +85,6 @@ const LlmErrorHandling = () => {
             <code>&quot;endUser&quot;</code> (default) or{' '}
             <code>&quot;developer&quot;</code>. Override per call (see Per-call
             overrides below).
-          </li>
-          <li>
-            <strong>Override:</strong> Whenever you pass a status code or
-            message (e.g.{' '}
-            <code>ammo.throw(404, &apos;User not found&apos;)</code>), that
-            value is used; the LLM is not called.
           </li>
         </ul>
         <CodeBlock
@@ -117,11 +126,12 @@ const LlmErrorHandling = () => {
           Per-call overrides
         </h2>
         <p className='text-muted-foreground'>
-          For any LLM-eligible <code>ammo.throw()</code> call, pass an options
-          object as the last argument: <code>useLlm</code> (boolean) to skip the
-          LLM for this call, and <code>messageType</code> (
+          For any <code>ammo.throw()</code> call, pass an options object as the
+          last argument: <code>useLlm</code> (boolean) to skip the LLM for this
+          specific call, and <code>messageType</code> (
           <code>&quot;endUser&quot;</code> | <code>&quot;developer&quot;</code>)
-          to override the configured default for this call only.
+          to override the configured default. This works with every throw
+          signature, including explicit status codes.
         </p>
         <CodeBlock
           code={ammoThrowExample}
@@ -141,15 +151,17 @@ const LlmErrorHandling = () => {
           <strong>
             <code>mode</code> to <code>&apos;async&apos;</code>
           </strong>{' '}
-          to respond immediately with a generic <code>500</code> and run the LLM
-          in the background. The result is dispatched to the configured channel
-          once ready — the client never waits.
+          to respond immediately with the resolved status code and message and
+          run the LLM in the background. The devInsight is dispatched to the
+          configured channel once ready — the client never waits.
         </p>
         <ul className='ml-6 list-disc space-y-1 text-muted-foreground'>
           <li>
-            The HTTP response is always <code>500 Internal Server Error</code>{' '}
-            in async mode. The LLM-inferred status and message only appear in
-            the channel output.
+            The HTTP response uses the resolved status code and message
+            immediately. For explicit throws like{' '}
+            <code>ammo.throw(502, &apos;msg&apos;)</code> the client sees{' '}
+            <code>502</code>; for bare errors the fallback is <code>500</code>.
+            The LLM-produced devInsight only appears in the channel output.
           </li>
           <li>
             Developer insight is <strong>always</strong> included in the
@@ -302,12 +314,12 @@ const LlmErrorHandling = () => {
           Using ammo.throw()
         </h2>
         <p className='text-muted-foreground'>
-          Call <code>ammo.throw()</code> with <strong>no arguments</strong> to
-          let the LLM infer status and message from code context. You can pass
-          an optional caught error as a secondary signal. Use options{' '}
-          <code>{'{ useLlm, messageType }'}</code> to override per call. The
-          framework will not execute further middleware or the route handler
-          after a response is sent.
+          Every <code>ammo.throw()</code> call is enriched by the LLM when
+          enabled. Explicit status codes and messages are preserved; the LLM
+          adds a <code>devInsight</code> for Tejas Radar. For bare errors and
+          no-arg throws the LLM also infers the status code and message. Use
+          options <code>{'{ useLlm: false }'}</code> as the last argument on any
+          signature to skip the LLM for that call.
         </p>
       </div>
     </div>
