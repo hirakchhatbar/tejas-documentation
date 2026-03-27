@@ -5,6 +5,15 @@ const quickStartServe = `// Serve the generated docs in your app
 app.serveDocs({ specPath: './openapi.json' });
 app.takeoff();`
 
+const passwordProtectionEnv = `# Enable and protect docs in production
+DOCS_PASSWORD=my-secret`
+
+const passwordProtectionExplicit = `// Or pass it explicitly
+app.serveDocs({
+  specPath: './openapi.json',
+  password: process.env.DOCS_PASSWORD,
+});`
+
 const endpointMetadata = `users.register('/', {
   summary: 'User operations',
   description: 'Create and list users',
@@ -25,4 +34,11 @@ const llmConfigJson = `{
   }
 }`
 
-export { quickStartBash, quickStartServe, endpointMetadata, llmConfigJson }
+export {
+  quickStartBash,
+  quickStartServe,
+  endpointMetadata,
+  llmConfigJson,
+  passwordProtectionEnv,
+  passwordProtectionExplicit
+}
