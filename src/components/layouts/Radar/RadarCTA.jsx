@@ -42,8 +42,11 @@ const RadarCTA = () => {
         </svg>
 
         <h2 className='text-center text-xl font-semibold tracking-tight text-foreground sm:text-2xl'>
-          Ready to add observability?
+          Stop juggling tools. Start shipping.
         </h2>
+        <p className='text-sm text-muted-foreground text-center max-w-md'>
+          One line. Full observability. No DevOps required.
+        </p>
         <div className='flex flex-wrap items-center justify-center gap-3'>
           <Button
             size='lg'
@@ -51,7 +54,7 @@ const RadarCTA = () => {
             asChild
           >
             <a href={RADAR_URL} target='_blank' rel='noopener noreferrer'>
-              Sign Up
+              Sign Up Free
               <ExternalLink className='ml-2 h-4 w-4' />
             </a>
           </Button>

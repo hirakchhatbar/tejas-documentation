@@ -1,6 +1,8 @@
 import RadarCTA from '@/components/layouts/Radar/RadarCTA.jsx'
 import RadarFeatures from '@/components/layouts/Radar/RadarFeatures.jsx'
+import RadarForAI from '@/components/layouts/Radar/RadarForAI.jsx'
 import RadarHero from '@/components/layouts/Radar/RadarHero.jsx'
+import RadarReplaces from '@/components/layouts/Radar/RadarReplaces.jsx'
 import RadarSetup from '@/components/layouts/Radar/RadarSetup.jsx'
 
 const ALTITUDE_TICKS = [50, 45, 40, 35, 30, 25, 20, 15, 10]
@@ -76,7 +78,9 @@ const Radar = () => {
 
       <div className='flex flex-col w-full max-w-[1440px] mx-auto items-center'>
         <RadarHero />
+        <RadarReplaces />
         <RadarFeatures />
+        <RadarForAI />
         <RadarSetup />
         <RadarCTA />
       </div>

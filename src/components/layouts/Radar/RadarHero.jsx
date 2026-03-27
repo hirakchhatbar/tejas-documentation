@@ -141,16 +141,17 @@ const RadarHero = () => {
           <div className='flex flex-col items-center gap-3'>
             <span className='inline-flex items-center gap-1.5 rounded-full border border-sky-500/25 bg-sky-500/10 px-3 py-1 text-xs font-medium tracking-wide text-sky-600 dark:text-sky-300 uppercase'>
               <ActivityIcon className='h-3 w-3' />
-              Observability
-            </span>
-            <h1 className='font-display text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl bg-gradient-to-r from-sky-400 via-sky-300 to-cyan-400 bg-clip-text text-transparent'>
               Tejas Radar
+            </span>
+            <h1 className='font-display text-3xl font-semibold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-sky-400 via-sky-300 to-cyan-400 bg-clip-text text-transparent whitespace-nowrap'>
+              10+ Tools, One Line of Code.
             </h1>
           </div>
           <p className='text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed'>
-            Production observability for te.js — request logs, error tracking,
-            distributed traces, and app-level log forwarding with built-in GDPR
-            privacy, all in one line of code.
+            Logs, metrics, errors, traces, spans, privacy — everything you need
+            to observe your production API, replacing Datadog, Sentry, Grafana,
+            and more. Just add <code className='text-sky-500 dark:text-sky-400'>withRadar()</code> and
+            you&apos;re done. No infra. No DevOps. No config files.
           </p>
         </div>
 
