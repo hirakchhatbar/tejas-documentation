@@ -47,6 +47,34 @@ const captureOptions = `app.withRadar({
   }
 });`
 
+const appLogsExample = `import Tejas from 'te.js';
+import TejLogger from 'tej-logger';
+
+const app = new Tejas();
+const logger = new TejLogger('billing');
+
+await app.withRadar({
+  apiKey: process.env.RADAR_API_KEY,
+  capture: {
+    logs: true,                      // forward TejLogger output to Radar
+    logLevels: ['warn', 'error']     // optional: filter — omit to forward all
+  }
+});
+
+app.takeoff();
+
+// Anywhere in your app — no Radar-specific API to learn:
+logger.info('Invoice generated', { invoiceId: 'inv_123' });
+logger.warn('Retrying payment');
+logger.error(new Error('Stripe timeout'));
+
+// Inside a request handler, logs are automatically
+// correlated with the request's traceId:
+export async function createInvoice(ammo) {
+  logger.info('Creating invoice', { accountId: ammo.account.id });
+  // ...
+}`
+
 const maskingExample = `app.withRadar({
   apiKey: 'rdr_your_api_key',
   capture: { request: true, response: true },
@@ -68,4 +96,11 @@ const ignoreRoutes = `app.withRadar({
   // OPTIONS requests are always skipped automatically
 });`
 
-export { quickStart, fullConfig, captureOptions, maskingExample, ignoreRoutes }
+export {
+  quickStart,
+  fullConfig,
+  captureOptions,
+  appLogsExample,
+  maskingExample,
+  ignoreRoutes
+}
