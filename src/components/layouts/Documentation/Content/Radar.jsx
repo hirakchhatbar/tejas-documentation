@@ -6,6 +6,8 @@ import {
   fullConfig,
   captureOptions,
   appLogsExample,
+  layeredControlExample,
+  radarStatsExample,
   maskingExample,
   ignoreRoutes
 } from '@/data/code-blocks/radar/index.js'
@@ -222,6 +224,70 @@ const Radar = () => {
 
       <Separator orientation='horizontal' />
 
+      <div id='layered-control' className='flex flex-col gap-2'>
+        <h2 className='text-xl font-semibold tracking-tight'>
+          Layered Control
+        </h2>
+        <p className='text-sm text-muted-foreground'>
+          By default, <code>capture.logs: true</code> forwards every{' '}
+          <code>TejLogger</code> call. For finer control, use{' '}
+          <code>&apos;explicit&apos;</code> mode with per-instance and per-call
+          overrides. Precedence is: per-call {'>'} instance {'>'} global config.
+        </p>
+        <CodeBlock
+          code={layeredControlExample}
+          language='javascript'
+          withLineNumbers
+          withCopy
+          theme={tejasTheme}
+        />
+        <h3 className='mt-4 text-base font-semibold tracking-tight text-foreground'>
+          How precedence works
+        </h3>
+        <ul className='ml-6 list-disc space-y-1 text-sm text-muted-foreground'>
+          <li>
+            <strong className='text-foreground'>
+              Global <code>capture.logs</code>
+            </strong>{' '}
+            — <code>false</code> (off, zero overhead), <code>true</code>{' '}
+            (forward all, subject to <code>logLevels</code>), or{' '}
+            <code>&apos;explicit&apos;</code> (forward only opted-in logs).
+          </li>
+          <li>
+            <strong className='text-foreground'>Instance defaults</strong> —{' '}
+            <code>new TejLogger(&apos;X&apos;, {'{ radar: true }'})</code> opts
+            all calls from that instance in (or out with <code>false</code>).
+          </li>
+          <li>
+            <strong className='text-foreground'>Per-call metadata</strong> —{' '}
+            <code>logger.info(&apos;msg&apos;, {'{ radar: false }'})</code>{' '}
+            overrides instance and global for that single call.
+          </li>
+          <li>
+            <strong className='text-foreground'>logLevels bypass</strong> — when
+            a log is explicitly opted in via <code>radar: true</code> (instance
+            or per-call), the <code>logLevels</code> filter is skipped.
+          </li>
+        </ul>
+
+        <h3 className='mt-4 text-base font-semibold tracking-tight text-foreground'>
+          Diagnostics
+        </h3>
+        <p className='text-sm text-muted-foreground'>
+          Use <code>app.radarStats()</code> to inspect forwarding counters and
+          diagnose why logs may not be reaching Radar.
+        </p>
+        <CodeBlock
+          code={radarStatsExample}
+          language='javascript'
+          withLineNumbers
+          withCopy
+          theme={tejasTheme}
+        />
+      </div>
+
+      <Separator orientation='horizontal' />
+
       <div id='privacy-masking' className='flex flex-col gap-2'>
         <h2 className='text-xl font-semibold tracking-tight'>
           Privacy &amp; Masking
@@ -290,6 +356,15 @@ const Radar = () => {
             Set <code>capture.logLevels</code> to{' '}
             <code>[&apos;warn&apos;, &apos;error&apos;]</code> in production to
             reduce volume when forwarding logs
+          </li>
+          <li>
+            Use <code>capture.logs: &apos;explicit&apos;</code> when you want
+            fine-grained control over which loggers reach Radar — ideal for
+            keeping noisy third-party loggers off your dashboard
+          </li>
+          <li>
+            Call <code>app.radarStats()</code> to diagnose silent drops — it
+            shows exactly why logs were filtered
           </li>
         </ul>
       </div>

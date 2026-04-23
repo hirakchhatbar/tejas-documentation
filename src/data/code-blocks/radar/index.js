@@ -23,8 +23,8 @@ const fullConfig = `app.withRadar({
     request: true,                   // send request bodies
     response: true,                  // send response bodies
     headers: true,                   // true | false | ['authorization', 'x-request-id']
-    logs: true,                      // forward TejLogger calls
-    logLevels: ['warn', 'error']     // filter forwarded log levels
+    logs: true,                      // forward TejLogger calls (true | false | 'explicit')
+    logLevels: ['warn', 'error']     // filter forwarded log levels (implicit path only)
   },
 
   // Privacy
@@ -43,7 +43,7 @@ const captureOptions = `app.withRadar({
     response: true,                  // include response body in logs
     headers: ['authorization', 'x-request-id'],  // allowlist specific headers
     logs: true,                      // forward TejLogger output
-    logLevels: ['warn', 'error']     // only forward these levels
+    logLevels: ['warn', 'error']     // only forward these levels (implicit path)
   }
 });`
 
@@ -75,6 +75,44 @@ export async function createInvoice(ammo) {
   // ...
 }`
 
+const layeredControlExample = `import Tejas from 'te.js';
+import TejLogger from 'tej-logger';
+
+const app = new Tejas();
+
+// 'explicit' mode: only loggers that opt in reach Radar
+await app.withRadar({
+  apiKey: process.env.RADAR_API_KEY,
+  capture: { logs: 'explicit' }
+});
+
+// Instance opt-in — all calls from this logger go to Radar:
+const billing = new TejLogger('Billing', { radar: true });
+billing.info('Invoice created');           // → forwarded to Radar
+billing.warn('Retrying payment');          // → forwarded to Radar
+
+// Per-call opt-out overrides instance default:
+billing.debug('verbose detail', { radar: false }); // → not forwarded
+
+// Logger without opt-in stays off Radar in 'explicit' mode:
+const cache = new TejLogger('Cache');
+cache.info('cache hit');                   // → console only
+
+// Per-call opt-in on any logger:
+cache.error('unexpected eviction', { radar: true }); // → forwarded
+
+// Precedence: per-call > instance > global config
+// When radar: true is explicit, the logLevels filter is bypassed.`
+
+const radarStatsExample = `// Inspect log forwarding counters for diagnostics:
+const stats = app.radarStats();
+// {
+//   emitted: 42,         — logs forwarded to Radar
+//   droppedByMode: 18,   — dropped (explicit mode, no opt-in)
+//   droppedByLevel: 5,   — dropped (logLevels filter)
+//   droppedByFlag: 3     — dropped (radar: false)
+// }`
+
 const maskingExample = `app.withRadar({
   apiKey: 'rdr_your_api_key',
   capture: { request: true, response: true },
@@ -101,6 +139,8 @@ export {
   fullConfig,
   captureOptions,
   appLogsExample,
+  layeredControlExample,
+  radarStatsExample,
   maskingExample,
   ignoreRoutes
 }
